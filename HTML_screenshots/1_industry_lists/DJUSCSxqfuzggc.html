@@ -1,0 +1,866 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- META DESCRIPTION -->
+    <meta name="description" content="Drill down into the current and past performance of the major US market sectors, their industry indexes and the individual stocks that constitute those groups.">
+    <meta name="keywords" content="Sector SPDR, sector, ETF, sector ETF, cyclicals, staples, technology, industrial, materials, energy, health care, utilities, financial, real estate, industry, industry group, industry indexes, indexes, market sectors, market industries, technical analysis, charts, financial charts, stocks, stock analysis, stock chart">
+    <!-- CONTENT SECURITY POLICY -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src https: 'unsafe-eval' 'unsafe-inline'; frame-src https: data:; base-uri 'self' *.stockcharts.com; img-src 'self' *.stockcharts.com data: https:; manifest-src 'none'; media-src s3.amazonaws.com https: data:; object-src 'none'; worker-src blob:;">
+    <link rel="shortcut icon" href="//d.stockcharts.com/favicon.gif" type="image/gif">
+
+    <title>Sector Summary | StockCharts.com</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="//d.stockcharts.com/vendor/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SITEWIDE FONTS -->
+    <link href="//d.stockcharts.com/css/google-fonts.css" rel="stylesheet">
+    <!-- SCC ICONS -->
+    <link href="//d.stockcharts.com/css/lib/scc-icons-square.css" rel="stylesheet" type="text/css">
+    <!-- CSS (SHARED) -->
+    <link href="//d.stockcharts.com/css/scc-universal.css?v=2020013001" rel="stylesheet" type="text/css" media="all">
+    <!-- CSS (datatables) -->
+    <link href="//d.stockcharts.com/vendor/dataTables/jquery/1.11.3/jquery.dataTables.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//d.stockcharts.com/vendor/dataTables/buttons/2.0.1/buttons.dataTables.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- CSS (tables) --> 
+    <link href="//d.stockcharts.com/css/scc-tables.css?v=2020020501" rel="stylesheet" type="text/css" media="all">
+    <!-- FONT AWESOME -->
+    <link href="//d.stockcharts.com/font-awesome/css/all.css" rel="stylesheet" type="text/css" media="all">
+    <!-- JS (SHARED) -->
+    <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1072529189&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="//d.stockcharts.com/vendor/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+    <script src="//d.stockcharts.com/vendor/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="//d.stockcharts.com/js/scc-universal-v2.js" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-88248853-1"></script>
+    <!-- ANIMATED SCROLL -->
+    <script src="//d.stockcharts.com/vendor/jquery-easing/1.4.1/jquery.easing.min.js" type="text/javascript" async=""></script>
+    <!-- JS (freecharts) -->
+    <script src="//d.stockcharts.com/freecharts/freecharts.js" type="text/javascript"></script>
+    <!-- JS (datatables) -->
+    <script type="text/javascript" src="//d.stockcharts.com/vendor/dataTables/jquery/1.11.3/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//d.stockcharts.com/vendor/dataTables/bootstrap/1.11.3/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="//d.stockcharts.com/vendor/dataTables/buttons/2.0.1/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="//d.stockcharts.com/vendor/dataTables/buttons/2.0.1/buttons.colVis.min.js"></script>
+
+    <script type="text/javascript" src="//d.stockcharts.com/js/lib/jqueryplugins/jquery.cookie.js"></script>
+    <!-- jQuery UI (JS) -->
+    <script src="//d.stockcharts.com/vendor/jquery-ui/1.13.0/jquery-ui.min.js"></script>
+    <!-- jQuery UI (CSS) -->
+    <link href="//d.stockcharts.com/vendor/jquery-ui/1.13.0/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- FREESTAR -->
+    <script data-cfasync="false" type="text/javascript">
+        if (!isLoggedIn()) {
+            var freestar = freestar || {};
+            freestar.hitTime = Date.now();
+            freestar.queue = freestar.queue || [];
+            freestar.config = freestar.config || {};
+            freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+
+            // Tag IDs set here, must match Tags served in the Body for proper setup
+            freestar.config.enabled_slots = [
+            "StockCharts_728x90_970x90_970x250_320x50_ATF"
+            ];
+
+            !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/stockcharts-com";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+
+        }
+        else {
+            $(function() {
+                $('.freestar-dvrt').remove();
+            });
+        }
+    </script>
+    <!-- end of FREESTAR -->
+
+    <!-- CUSTOM STYLES -->
+    <style>
+        /* GENERAL */
+        #pagecontents { padding:15px 0; }
+
+        #login_prompt { text-align:center; font-size:20px; }
+        
+        #sectorTable.table > thead > tr > th.links-first,
+        #sectorTable.table > tbody > tr > td.links-first { width:65px !important; }
+        #sectorTable.table > thead > tr > th.links-last,
+        #sectorTable.table > tbody > tr > td.links-last { width:45px !important; }
+
+        #sectorTable.table > tbody > tr > td:nth-child(2) span { font-weight:bold; }
+
+        /* PRINT QUERIES */
+        @media print { 
+            .hr {display:none !important;}
+            #pagebody {margin:0 auto;}
+            #sectorTable tr th:first-child,
+            #sectorTable tr td:first-child,
+            #sectorTable tr th:last-child,
+            #sectorTable tr td:last-child {display:none !important;}
+        }
+    </style>
+<script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1072529189/?random=1652213286894&amp;cv=9&amp;fst=1652213286894&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_his=16&amp;u_tz=-300&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;gtm=2oa590&amp;sendb=1&amp;ig=1&amp;data=event%3Dgtag.config&amp;frm=0&amp;url=https%3A%2F%2Fstockcharts.com%2Ffreecharts%2Fsectorsummary.html%3F%26G%3DSECTOR_DJUSCS%26O%3D6&amp;tiba=Sector%20Summary%20%7C%20StockCharts.com&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script></head>
+<body id="page-top">
+    <!-- SCC NAVBAR -->
+    <nav id="scc-navbar" class="navbar navbar-inverse navbar-blue navbar-static-top">
+        <div class="container-fluid">
+            <!-- NAV UPPER -->
+            <div id="nav-upper" class="row">
+                <!-- NAVBAR BRAND -->
+                <a href="/" class="navbar-brand">
+                    <img src="//d.stockcharts.com/img/scc-logo-light.png" alt="StockCharts Logo" class="navbar-logo">
+                    <img src="//d.stockcharts.com/img/scc-logo-icon.png" alt="StockCharts Icon" class="navbar-logo logo-icon">
+                </a>
+                <!-- MENU TOGGLE -->
+                <div id="nav-menuToggle" class="nav navbar-nav">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menuCollapse" aria-expanded="false" aria-controls="navbar-menuCollapse" aria-label="Toggle Website Navigation Menu"><i class="fas fa-bars"></i></button>
+                </div>
+                <!-- ACCOUNT LINKS -->
+                <ul id="nav-accountLinks" class="nav navbar-nav">
+                    <li id="nav-loginBtn" style="display: none;">
+                        <a href="/login" class="btn navbar-btn btn-transparent">Log In</a>
+                    </li>
+                    <li id="nav-signUpBtn" style="display: none;">
+                        <a href="/checkout/freetrial/" class="btn navbar-btn btn-green">Free Trial</a>
+                    </li>
+                    <li id="nav-userProfile" class="dropdown" style="display: list-item;">
+                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-fw fa-user-circle"></i><span id="nav-userID">Samuel</span><i class="far fa-fw fa-angle-down"></i>
+                        </a>
+                        <ul id="nav-userMenu" class="dropdown-menu">
+                            <li><a href="/def/servlet/Favorites.CServlet#chartlists"><i class="fas fa-fw fa-user-chart"></i>&nbsp;&nbsp;Your
+                                    ChartLists</a></li>
+                            <li><a href="/def/servlet/ScanUI"><i class="fal fa-fw fa-sliders-h"></i>&nbsp;&nbsp;Your
+                                    Scans</a></li>
+                            <li><a href="/h-mem/useralertsummary.html"><i class="far fa-fw fa-bell"></i>&nbsp;&nbsp;Your
+                                    Alerts</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/youracct"><i class="fas fa-fw fa-cogs"></i>&nbsp;&nbsp;Your Account</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="//support.stockcharts.com"><i class="fas fa-fw fa-question-circle"></i>&nbsp;&nbsp;Support
+                                    Center</a></li>
+                            <li><a href="/support/techsupport.html"><i class="far fa-fw fa-envelope"></i>&nbsp;&nbsp;Contact
+                                    Us</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout"><i class="fas fa-fw fa-sign-out-alt"></i>&nbsp;&nbsp;Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- CHART SEARCH -->
+                <form id="nav-chartSearch" class="input-group" role="search" onsubmit="return chartSearch('nav-chartSearch');">
+                    <div class="input-group-btn dropdown">
+                        <button type="button" id="nav-chartSearch-btn" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SharpChart <i class="far fa-angle-down"></i>
+                        </button>
+                        <input type="hidden" id="nav-chartSearch-type" name="searchoptions" value="sharpChart">
+                        <ul class="dropdown-menu" id="nav-chartSearch-menu">
+                            <li>
+                                <a href="#" data-val="symSum">
+                                    <span class="item-label"><i class="far fa-file-invoice-dollar"></i>Symbol Summary</span>
+                                    <span class="item-star"><i class="far fa-star"></i></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-val="sharpChart">
+                                    <span class="item-label"><i class="icon icon-scc-pos-sq-sharp"></i>SharpChart</span>
+                                    <span class="item-star starred"><i class="far fa-star"></i></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-val="acp">
+                                    <span class="item-label"><i class="icon icon-scc-pos-sq-acp"></i>ACP</span>
+                                    <span class="item-star"><i class="far fa-star"></i></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-val="pnf">
+                                    <span class="item-label"><i class="icon icon-scc-pos-sq-pnf"></i>Point &amp;
+                                        Figure</span>
+                                    <span class="item-star"><i class="far fa-star"></i></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-val="gallery">
+                                    <span class="item-label"><i class="icon icon-scc-pos-sq-gallery"></i>GalleryView</span>
+                                    <span class="item-star"><i class="far fa-star"></i></span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-val="perf"><i class="icon icon-scc-pos-sq-perfchart"></i>PerfChart</a></li>
+                            <li><a href="#" data-val="candleGlance"><i class="icon icon-scc-pos-sq-candle"></i>CandleGlance</a></li>
+                            <li><a href="#" data-val="seasonality"><i class="icon icon-scc-pos-sq-season"></i>Seasonality</a></li>
+                            <li><a href="#" data-val="rrg"><i class="icon icon-scc-pos-sq-rrg"></i>RRG</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-val="symSearch"><i class="fas fa-search-plus"></i>Symbol Lookup</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" id="nav-chartSearch-input" class="form-control" placeholder="Enter Symbol or Name" aria-label="Search for a Security" autocomplete="off" style="font-style: normal; color: rgb(0, 0, 0);">
+                    <span class="input-group-btn">
+                        <button id="nav-chartSearch-submit" class="btn btn-default btn-submit" type="submit">Go</button>
+                    </span>
+                </form>
+            </div><!-- end of NAV UPPER -->
+            <!-- NAV LOWER -->
+            <div id="nav-lower">
+                <!-- MENU COLLAPSE -->
+                <div id="navbar-menuCollapse" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav sitelinks">
+                        <li><a href="/freecharts/">Charts &amp; Tools</a></li>
+                        <li><a href="/articles/">Articles</a></li>
+                        <li><a href="/tv/">StockCharts TV <span class="label label-tv-live">LIVE</span></a></li>
+                        <li><a href="//school.stockcharts.com">ChartSchool</a></li>
+                        <li class="dashboard"><a href="/def/servlet/Favorites.CServlet"><span class="hide-sm">Your&nbsp;</span>Dashboard</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav sitelinks pull-right">
+                        <li><a href="//store.stockcharts.com">Store</a></li>
+                        <li><a href="//support.stockcharts.com">Help</a></li>
+                    </ul>
+                    <div id="nav-siteSearch-wrap">
+                        <form id="nav-siteSearch" role="search" action="/search/">
+                            <input type="search" id="nav-siteSearch-input" placeholder="Search StockCharts" name="q" required="" aria-label="Search StockCharts">
+                            <input type="submit" id="nav-siteSearch-submit" value="Go">
+                            <span id="nav-siteSearch-icon"></span>
+                        </form>
+                    </div>
+                </div><!-- end of MENU COLLAPSE -->
+            </div><!-- end of NAV LOWER -->
+        </div>
+    </nav><!-- end of SCC NAVBAR -->
+
+    <!-- PAGEBODY -->
+    <div id="pagebody">
+        <!-- MENU HEADER -->
+        <div id="page-header" class="menu-header">
+            <h1 class="page-title">Sector Summary for</h1>
+            <div class="dropdown">
+                <button id="sectorFundsMenu" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Special Consumer Services</span><i class="far fa-angle-down"></i></button>
+                <ul id="sectorFundsList" class="dropdown-menu">
+                    <li><a href="#" data-value="SPDR" data-name="All S&amp;P Sectors">All S&amp;P Sectors</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-value="XLC" data-name="Communication Services">Communication Services</a></li>
+                    <li><a href="#" data-value="XLY" data-name="Consumer Discretionary">Consumer Discretionary</a></li>
+                    <li><a href="#" data-value="XLP" data-name="Consumer Staples">Consumer Staples</a></li>
+                    <li><a href="#" data-value="XLE" data-name="Energy">Energy</a></li>
+                    <li><a href="#" data-value="XLF" data-name="Financial">Financial</a></li>
+                    <li><a href="#" data-value="XLV" data-name="Health Care">Health Care</a></li>
+                    <li><a href="#" data-value="XLI" data-name="Industrial">Industrial</a></li>
+                    <li><a href="#" data-value="XLB" data-name="Materials">Materials</a></li>
+                    <li><a href="#" data-value="XLRE" data-name="Real Estate">Real Estate</a></li>
+                    <li><a href="#" data-value="XLK" data-name="Technology">Technology</a></li>
+                    <li><a href="#" data-value="XLU" data-name="Utilities">Utilities</a></li>
+                </ul>
+            </div>
+        </div><!-- end of MENU HEADER -->
+        <!-- PAGECONTENTS -->
+        <div id="pagecontents">
+            <div class="container">
+
+                <!-- Tag ID: StockCharts_728x90_970x90_970x250_320x50_ATF -->
+                
+
+                <!-- TABLE INFO ROW -->
+                <div class="table-info-row">
+                    <!-- BREADCRUMBS -->
+                    <div id="breadcrumb" class="breadcrumbs"><a href="sectorsummary.html?O=6"> S&amp;P Sectors</a> » <a href="sectorsummary.html?O=6&amp;G=SECTOR_XLY">Consumer Discretionary Sector</a></div>
+                    <!-- DATE -->
+                    <div id="report-date" class="table-date">10 May 2022, 4:07 PM</div>
+                </div>
+
+                <!-- LOADING SPINNER -->
+                <div id="loading-spinner" class="loading-spinner" style="display: none;">
+                    <i class="fas fa-fw fa-spinner fa-pulse"></i>
+                </div>
+
+                <div id="loading-wrapper" style="">
+                    <!-- TABLE -->
+                    <div id="sectorTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="table-controls-top clearfix"><div class="table-toolbar btn-row"><div class="dt-buttons"><div class="form-group"><label for="select_period" class="label-sm">Period</label><select class="form-control input-sm" id="select_period" onchange="onChangePeriod(); return false;" name="select_period"><option name="Intraday" value="0" selected="selected">Intraday</option><option name="End-of-Day" value="1">End-of-Day</option><option name="One Week" value="2">One Week</option><option name="One Month" value="3">One Month</option><option name="Three Month" value="4">Three Month</option><option name="Six Month" value="5">Six Month</option><option name="YTD" value="7">YTD</option><option name="One Year" value="6">One Year</option></select></div><button class="dt-button buttons-collection buttons-colvis btn btn-white btn-sq" tabindex="0" aria-controls="sectorTable" type="button" aria-haspopup="true"><span>Columns</span><span class="dt-down-arrow">▼</span></button> </div><div id="hidepennyWrap" class="form-group fa-checkbox fa-checkbox-sm"><input id="hidepenny" name="hidepenny" type="checkbox" checked="checked"><label for="hidepenny">Hide stocks under $1</label></div></div><div id="sectorTable_filter" class="dataTables_filter form-group"><label><label class="label-sm" aria-hidden="true">&nbsp;</label><input type="search" class="form-control input-sm" placeholder="Search Table" aria-controls="sectorTable"></label></div></div><div class="table-responsive"><table id="sectorTable" class="table table-striped table-bordered table-hover table-condensed dataTable no-footer" width="100%" cellspacing="0" aria-describedby="sectorTable_info" style="width: 100%;">
+                        <thead>
+                            <tr><td class="links links-first sorting_disabled" scope="col" rowspan="1" colspan="1" aria-label="" style="width: 0px;"></td><th scope="col" class="sorting" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="Symbol: activate to sort column ascending" style="width: 0px;">Symbol</th><th scope="col" class="sorting" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 0px;">Name</th><th scope="col" class="sorting_asc_disabled" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="SCTR: activate to sort column descending" style="width: 0px;">SCTR</th><th scope="col" class="sorting" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="U: activate to sort column ascending" style="width: 0px;">U</th><th scope="col" class="sorting" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="Close: activate to sort column ascending" style="width: 0px;">Close</th><th scope="col" class="sorting" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="Chg: activate to sort column ascending" style="width: 0px;">Chg</th><th scope="col" class="sorting sorting_desc" tabindex="0" aria-controls="sectorTable" rowspan="1" colspan="1" aria-label="% Chg: activate to sort column ascending" style="width: 0px;" aria-sort="descending">% Chg</th><td scope="col" class="sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 0px;"></td><td class="links links-last sorting_disabled" scope="col" rowspan="1" colspan="1" aria-label="" style="width: 0px;"></td></tr>
+                        </thead>
+                        <tbody><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=RENN" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=RENN" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=RENN" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?RENN" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=RENN,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=RENN" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">RENN</span></td><td><a href="/h-sc/ui?s=RENN">Renren Inc.</a></td><td>98.2</td><td>sml</td><td>28.01</td><td>19.53</td><td class="sorting_1">213.44</td><td><img width="80" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=PCOM" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=PCOM" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=PCOM" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?PCOM" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=PCOM,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=PCOM" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">PCOM</span></td><td><a href="/h-sc/ui?s=PCOM">Points Intl., Inc.</a></td><td>99.4</td><td>sml</td><td>24.46</td><td>8.44</td><td class="sorting_1">52.10</td><td><img width="80" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=LAUR" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=LAUR" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=LAUR" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?LAUR" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=LAUR,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=LAUR" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">LAUR</span></td><td><a href="/h-sc/ui?s=LAUR">Laureate Education, Inc.</a></td><td>86.8</td><td>mid</td><td>11.48</td><td>3.55</td><td class="sorting_1">44.63</td><td><img width="80" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=LRN" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=LRN" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=LRN" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?LRN" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=LRN,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=LRN" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">LRN</span></td><td><a href="/h-sc/ui?s=LRN">Stride Inc.</a></td><td>92.3</td><td>sml</td><td>36.61</td><td>8.59</td><td class="sorting_1">31.24</td><td><img width="80" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=SCI" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=SCI" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=SCI" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?SCI" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=SCI,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=SCI" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">SCI</span></td><td><a href="/h-sc/ui?s=SCI">Service Corp.</a></td><td>79.1</td><td>lrg</td><td>69.05</td><td>11.39</td><td class="sorting_1">20.65</td><td><img width="80" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=WBX" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=WBX" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=WBX" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?WBX" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=WBX,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=WBX" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">WBX</span></td><td><a href="/h-sc/ui?s=WBX">Wallbox N.V</a></td><td>52.2</td><td>mid</td><td>11.68</td><td>1.53</td><td class="sorting_1">15.25</td><td><img width="61" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=FRG" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=FRG" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=FRG" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?FRG" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=FRG,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=FRG" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">FRG</span></td><td><a href="/h-sc/ui?s=FRG">Franchise Group Inc</a></td><td>66.5</td><td>sml</td><td>37.15</td><td>2.59</td><td class="sorting_1">7.50</td><td><img width="30" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=CSV" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=CSV" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=CSV" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?CSV" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=CSV,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=CSV" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">CSV</span></td><td><a href="/h-sc/ui?s=CSV">Carriage Services, Inc.</a></td><td>48.5</td><td>sml</td><td>40.07</td><td>1.80</td><td class="sorting_1">4.80</td><td><img width="19.2" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=HRB" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=HRB" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=HRB" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?HRB" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=HRB,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=HRB" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">HRB</span></td><td><a href="/h-sc/ui?s=HRB">H &amp; R Block, Inc.</a></td><td>70.3</td><td>mid</td><td>24.27</td><td>1.00</td><td class="sorting_1">4.36</td><td><img width="17.44" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=CHE" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=CHE" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=CHE" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?CHE" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=CHE,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=CHE" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">CHE</span></td><td><a href="/h-sc/ui?s=CHE">Chemed Corp.</a></td><td>86.9</td><td>mid</td><td>501.86</td><td>12.37</td><td class="sorting_1">2.53</td><td><img width="10.12" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=MCW" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=MCW" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=MCW" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?MCW" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=MCW,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=MCW" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">MCW</span></td><td><a href="/h-sc/ui?s=MCW">Mister Car Wash Inc.</a></td><td></td><td></td><td>13.65</td><td>0</td><td class="sorting_1">0</td><td><img width="0" height="10" src="//d.stockcharts.com/images/greengrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=LOPE" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=LOPE" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=LOPE" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?LOPE" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=LOPE,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=LOPE" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">LOPE</span></td><td><a href="/h-sc/ui?s=LOPE">Grand Canyon Education Inc.</a></td><td>81.1</td><td>mid</td><td>91.72</td><td>-4.77</td><td class="sorting_1">-5.06</td><td><img width="20.24" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=STON" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=STON" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=STON" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?STON" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=STON,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=STON" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">STON</span></td><td><a href="/h-sc/ui?s=STON">StoneMor Inc</a></td><td>73.3</td><td>sml</td><td>2.32</td><td>-0.21</td><td class="sorting_1">-8.11</td><td><img width="32.44" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=GHC" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=GHC" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=GHC" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?GHC" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=GHC,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=GHC" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">GHC</span></td><td><a href="/h-sc/ui?s=GHC">Graham Holdings Company</a></td><td>87.9</td><td>mid</td><td>599.09</td><td>-54.42</td><td class="sorting_1">-8.23</td><td><img width="32.92" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=HI" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=HI" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=HI" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?HI" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=HI,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=HI" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">HI</span></td><td><a href="/h-sc/ui?s=HI">Hillenbrand Inc.</a></td><td>59.7</td><td>mid</td><td>42.78</td><td>-4.69</td><td class="sorting_1">-10.26</td><td><img width="41.04" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=TMX" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=TMX" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=TMX" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?TMX" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=TMX,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=TMX" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">TMX</span></td><td><a href="/h-sc/ui?s=TMX">Terminix Global Holdings, Inc.</a></td><td>80.3</td><td>mid</td><td>43.22</td><td>-6.72</td><td class="sorting_1">-13.59</td><td><img width="54.36" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=PRDO" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=PRDO" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=PRDO" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?PRDO" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=PRDO,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=PRDO" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">PRDO</span></td><td><a href="/h-sc/ui?s=PRDO">Perdoceo Education Corporation</a></td><td>76.1</td><td>sml</td><td>10.22</td><td>-1.64</td><td class="sorting_1">-13.68</td><td><img width="54.72" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ATGE" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ATGE" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ATGE" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ATGE" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ATGE,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ATGE" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ATGE</span></td><td><a href="/h-sc/ui?s=ATGE">Adtalem Global Education, Inc.</a></td><td>93.8</td><td>sml</td><td>31.47</td><td>-5.15</td><td class="sorting_1">-13.81</td><td><img width="55.24" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=SP" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=SP" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=SP" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?SP" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=SP,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=SP" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">SP</span></td><td><a href="/h-sc/ui?s=SP">SP Plus Corp.</a></td><td>74.6</td><td>sml</td><td>28.49</td><td>-4.83</td><td class="sorting_1">-14.50</td><td><img width="58" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=STRA" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=STRA" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=STRA" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?STRA" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=STRA,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=STRA" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">STRA</span></td><td><a href="/h-sc/ui?s=STRA">Strategic Education, Inc.</a></td><td>83.7</td><td>sml</td><td>63.14</td><td>-12.61</td><td class="sorting_1">-16.71</td><td><img width="66.84" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=UHAL" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=UHAL" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=UHAL" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?UHAL" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=UHAL,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=UHAL" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">UHAL</span></td><td><a href="/h-sc/ui?s=UHAL">Amerco</a></td><td>30.3</td><td>lrg</td><td>529.02</td><td>-108.38</td><td class="sorting_1">-17.20</td><td><img width="68.8" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=EBAY" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=EBAY" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=EBAY" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?EBAY" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=EBAY,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=EBAY" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">EBAY</span></td><td><a href="/h-sc/ui?s=EBAY">eBay, Inc.</a></td><td>21.3</td><td>lrg</td><td>49.26</td><td>-12.10</td><td class="sorting_1">-19.94</td><td><img width="79.76" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=YELP" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=YELP" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=YELP" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?YELP" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=YELP,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=YELP" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">YELP</span></td><td><a href="/h-sc/ui?s=YELP">Yelp Inc.</a></td><td>36.3</td><td>mid</td><td>29.51</td><td>-10.09</td><td class="sorting_1">-25.52</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=MATW" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=MATW" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=MATW" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?MATW" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=MATW,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=MATW" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">MATW</span></td><td><a href="/h-sc/ui?s=MATW">Matthews International Corporation</a></td><td>61.5</td><td>sml</td><td>30.28</td><td>-10.66</td><td class="sorting_1">-26.50</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=KAR" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=KAR" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=KAR" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?KAR" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=KAR,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=KAR" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">KAR</span></td><td><a href="/h-sc/ui?s=KAR">KAR Auction Services Inc.</a></td><td>29.6</td><td>mid</td><td>12.98</td><td>-5.40</td><td class="sorting_1">-30.10</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=MODV" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=MODV" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=MODV" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?MODV" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=MODV,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=MODV" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">MODV</span></td><td><a href="/h-sc/ui?s=MODV">ModivCare Inc.</a></td><td>42.3</td><td>sml</td><td>98.15</td><td>-46.54</td><td class="sorting_1">-32.44</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=MNRO" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=MNRO" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=MNRO" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?MNRO" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=MNRO,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=MNRO" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">MNRO</span></td><td><a href="/h-sc/ui?s=MNRO">Monro, Inc.</a></td><td>56.3</td><td>sml</td><td>44.88</td><td>-23.74</td><td class="sorting_1">-35.07</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=TRUE" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=TRUE" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=TRUE" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?TRUE" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=TRUE,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=TRUE" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">TRUE</span></td><td><a href="/h-sc/ui?s=TRUE">TrueCar Inc.</a></td><td>39.5</td><td>sml</td><td>3.54</td><td>-1.68</td><td class="sorting_1">-37.17</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=APEI" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=APEI" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=APEI" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?APEI" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=APEI,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=APEI" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">APEI</span></td><td><a href="/h-sc/ui?s=APEI">American Public Education Inc.</a></td><td>45.0</td><td>sml</td><td>18.20</td><td>-12.59</td><td class="sorting_1">-41.33</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=BFAM" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=BFAM" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=BFAM" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?BFAM" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=BFAM,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=BFAM" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">BFAM</span></td><td><a href="/h-sc/ui?s=BFAM">Bright Horizons Family Solutions Inc.</a></td><td>9.9</td><td>mid</td><td>79.76</td><td>-58.74</td><td class="sorting_1">-42.26</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=RDBX" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=RDBX" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=RDBX" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?RDBX" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=RDBX,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=RDBX" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">RDBX</span></td><td><a href="/h-sc/ui?s=RDBX">Redbox Entertainment Inc.</a></td><td>95.5</td><td>sml</td><td>5.58</td><td>-4.26</td><td class="sorting_1">-43.12</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=MELI" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=MELI" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=MELI" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?MELI" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=MELI,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=MELI" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">MELI</span></td><td><a href="/h-sc/ui?s=MELI">MercadoLibre Inc.</a></td><td>5.9</td><td>lrg</td><td>770.99</td><td>-609.50</td><td class="sorting_1">-44.02</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=BLNK" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=BLNK" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=BLNK" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?BLNK" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=BLNK,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=BLNK" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">BLNK</span></td><td><a href="/h-sc/ui?s=BLNK">Blink Charging Co.</a></td><td>25.4</td><td>sml</td><td>15.53</td><td>-13.89</td><td class="sorting_1">-46.10</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=FEDU" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=FEDU" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=FEDU" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?FEDU" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=FEDU,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=FEDU" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">FEDU</span></td><td><a href="/h-sc/ui?s=FEDU">Four Seasons Education, Inc.</a></td><td></td><td></td><td>0.54</td><td>-0.49</td><td class="sorting_1">-48.51</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ETSY" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ETSY" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ETSY" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ETSY" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ETSY,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ETSY" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ETSY</span></td><td><a href="/h-sc/ui?s=ETSY">Etsy Inc.</a></td><td>3.5</td><td>lrg</td><td>86.40</td><td>-83.08</td><td class="sorting_1">-49.71</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=CRWG" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=CRWG" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=CRWG" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?CRWG" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=CRWG,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=CRWG" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">CRWG</span></td><td><a href="/h-sc/ui?s=CRWG">CrowdGather Inc.</a></td><td></td><td></td><td>0.01</td><td>-0.01</td><td class="sorting_1">-50.00</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ROVR" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ROVR" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ROVR" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ROVR" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ROVR,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ROVR" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ROVR</span></td><td><a href="/h-sc/ui?s=ROVR">Rover Group Inc.</a></td><td>27.9</td><td>sml</td><td>5.29</td><td>-4.98</td><td class="sorting_1">-50.25</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=FTDR" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=FTDR" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=FTDR" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?FTDR" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=FTDR,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=FTDR" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">FTDR</span></td><td><a href="/h-sc/ui?s=FTDR">frontdoor, inc.</a></td><td>26.6</td><td>mid</td><td>26.90</td><td>-27.03</td><td class="sorting_1">-50.60</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=RCII" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=RCII" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=RCII" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?RCII" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=RCII,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=RCII" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">RCII</span></td><td><a href="/h-sc/ui?s=RCII">Rent-A-Center, Inc.</a></td><td>46.5</td><td>sml</td><td>28.22</td><td>-30.87</td><td class="sorting_1">-53.63</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=WTER" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=WTER" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=WTER" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?WTER" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=WTER,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=WTER" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">WTER</span></td><td><a href="/h-sc/ui?s=WTER">Alkaline Water Co. Inc.</a></td><td></td><td></td><td>0.46</td><td>-0.56</td><td class="sorting_1">-54.26</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=PETQ" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=PETQ" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=PETQ" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?PETQ" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=PETQ,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=PETQ" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">PETQ</span></td><td><a href="/h-sc/ui?s=PETQ">PetIQ, Inc.</a></td><td>35.1</td><td>sml</td><td>16.36</td><td>-25.91</td><td class="sorting_1">-61.65</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=AACG" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=AACG" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=AACG" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?AACG" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=AACG,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=AACG" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">AACG</span></td><td><a href="/h-sc/ui?s=AACG">ATA Inc.</a></td><td>31.8</td><td>sml</td><td>1.07</td><td>-1.80</td><td class="sorting_1">-62.67</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=QUOT" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=QUOT" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=QUOT" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?QUOT" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=QUOT,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=QUOT" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">QUOT</span></td><td><a href="/h-sc/ui?s=QUOT">Quotient Technology Inc.</a></td><td>30.6</td><td>sml</td><td>4.14</td><td>-7.88</td><td class="sorting_1">-64.66</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ANGI" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ANGI" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ANGI" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ANGI" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ANGI,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ANGI" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ANGI</span></td><td><a href="/h-sc/ui?s=ANGI">Angie's List Inc.</a></td><td>9.7</td><td>mid</td><td>3.59</td><td>-8.21</td><td class="sorting_1">-65.26</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny odd" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=CBDS" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=CBDS" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=CBDS" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?CBDS" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=CBDS,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=CBDS" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">CBDS</span></td><td><a href="/h-sc/ui?s=CBDS">Cannabis Sativa, Inc.</a></td><td></td><td></td><td>0.14</td><td>-0.33</td><td class="sorting_1">-70.19</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=AMBO" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=AMBO" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=AMBO" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?AMBO" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=AMBO,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=AMBO" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">AMBO</span></td><td><a href="/h-sc/ui?s=AMBO">Ambow Education Holding Ltd.</a></td><td>43.2</td><td>sml</td><td>0.60</td><td>-1.74</td><td class="sorting_1">-70.30</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=GRPN" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=GRPN" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=GRPN" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?GRPN" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=GRPN,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=GRPN" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">GRPN</span></td><td><a href="/h-sc/ui?s=GRPN">Groupon Inc.</a></td><td>25.3</td><td>sml</td><td>15.66</td><td>-32.93</td><td class="sorting_1">-70.63</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ATHM" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ATHM" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ATHM" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ATHM" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ATHM,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ATHM" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ATHM</span></td><td><a href="/h-sc/ui?s=ATHM">Autohome Inc.</a></td><td>25.2</td><td>mid</td><td>25.35</td><td>-64.52</td><td class="sorting_1">-71.28</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=LOV" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=LOV" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=LOV" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?LOV" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=LOV,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=LOV" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">LOV</span></td><td><a href="/h-sc/ui?s=LOV">Spark Networks Inc.</a></td><td>33.2</td><td>sml</td><td>2.02</td><td>-4.74</td><td class="sorting_1">-71.60</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=RYB" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=RYB" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=RYB" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?RYB" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=RYB,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=RYB" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">RYB</span></td><td><a href="/h-sc/ui?s=RYB">Ryb Education, Inc.</a></td><td>19.4</td><td>sml</td><td>0.80</td><td>-2.13</td><td class="sorting_1">-72.50</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=WW" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=WW" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=WW" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?WW" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=WW,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=WW" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">WW</span></td><td><a href="/h-sc/ui?s=WW">Weight Watchers Intl Inc.</a></td><td>23.3</td><td>sml</td><td>9.13</td><td>-29.08</td><td class="sorting_1">-78.24</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=CHGG" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=CHGG" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=CHGG" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?CHGG" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=CHGG,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=CHGG" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">CHGG</span></td><td><a href="/h-sc/ui?s=CHGG">Chegg, Inc.</a></td><td>6.9</td><td>mid</td><td>17.50</td><td>-64.41</td><td class="sorting_1">-78.41</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny odd" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ZVO" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ZVO" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ZVO" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ZVO" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ZVO,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ZVO" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ZVO</span></td><td><a href="/h-sc/ui?s=ZVO">Zovio Inc.</a></td><td>28.9</td><td>sml</td><td>0.71</td><td>-2.67</td><td class="sorting_1">-78.76</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=CGRW" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=CGRW" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=CGRW" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?CGRW" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=CGRW,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=CGRW" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">CGRW</span></td><td><a href="/h-sc/ui?s=CGRW">Cannagrow Holdings, Inc.</a></td><td></td><td></td><td>0.03</td><td>-0.13</td><td class="sorting_1">-83.38</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny odd" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=ASPU" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=ASPU" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=ASPU" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?ASPU" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=ASPU,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=ASPU" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">ASPU</span></td><td><a href="/h-sc/ui?s=ASPU">Aspen Group, Inc.</a></td><td>6.9</td><td>sml</td><td>0.82</td><td>-4.41</td><td class="sorting_1">-84.48</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=RGS" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=RGS" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=RGS" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?RGS" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=RGS,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=RGS" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">RGS</span></td><td><a href="/h-sc/ui?s=RGS">Regis Corp.</a></td><td>2.0</td><td>sml</td><td>1.25</td><td>-8.49</td><td class="sorting_1">-91.85</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=EDU" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=EDU" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=EDU" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?EDU" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=EDU,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=EDU" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">EDU</span></td><td><a href="/h-sc/ui?s=EDU">New Oriental Education &amp; Technology Group Inc.</a></td><td>7.8</td><td>mid</td><td>10.20</td><td>-134.38</td><td class="sorting_1">-93.13</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="even"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=TAL" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=TAL" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=TAL" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?TAL" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=TAL,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=TAL" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">TAL</span></td><td><a href="/h-sc/ui?s=TAL">TAL Education Group</a></td><td>45.3</td><td>sml</td><td>3.32</td><td>-50.80</td><td class="sorting_1">-93.71</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=COE" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=COE" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=COE" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?COE" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=COE,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=COE" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">COE</span></td><td><a href="/h-sc/ui?s=COE">China Online Education Group</a></td><td>18.3</td><td>sml</td><td>1.21</td><td>-18.02</td><td class="sorting_1">-94.00</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="hidepenny even" style="display: none;"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=POTN" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=POTN" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=POTN" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?POTN" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=POTN,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=POTN" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">POTN</span></td><td><a href="/h-sc/ui?s=POTN">PotNetwork Holding, Inc.</a></td><td></td><td></td><td>0.00</td><td>-0.01</td><td class="sorting_1">-96.47</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr><tr class="odd"><td class="links links-first"><a href="/freecharts/symbolsummary.html?sym=AIU" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a><a href="/h-sc/ui?s=AIU" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a><a href="/acp/?s=AIU" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a><a href="/freecharts/gallery.html?AIU" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a><a href="/def/servlet/SC.pnf?c=AIU,P" title="P&amp;F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a><a href="/freecharts/seasonality.php?symbol=AIU" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a></td><td><span data-sym="">AIU</span></td><td><a href="/h-sc/ui?s=AIU">Meta Data Limited</a></td><td>4.4</td><td>sml</td><td>1.43</td><td>-59.41</td><td class="sorting_1">-97.79</td><td><img width="80" height="10" src="//d.stockcharts.com/images/redgrad.gif"></td><td class="links links-last">&nbsp;</td></tr></tbody>
+                    </table></div><div class="table-controls-bottom clearfix"><div class="dataTables_info" id="sectorTable_info" role="status" aria-live="polite">Showing 1 to 61 of 61 entries</div></div></div>
+
+                    <!-- HOVER NOTE -->
+                    <p class="note hover-note">Note: Hover over each symbol in the table above to see a mini chart for that ticker.</p>
+                </div>
+
+            </div><!-- end of .CONTAINER -->
+        </div><!-- end of #PAGECONTENTS -->
+        <!-- SECTION LINKS ROW -->
+        <div class="section-links-row">
+            <div class="section-links-row-bound">
+                <ul class="section-links-row-ul">
+                    <li><a href="industrysummary.html"><i class="fas fa-university"></i>Complete Industry Summary</a></li>
+                    <li><a href="/freecharts/perf.php?[SECT]"><i class="icon icon-square icon-scc-pos-sq-perfchart"></i>Sector PerfChart</a></li>
+                    <li><a href="/freecharts/candleglance.html?[SECT]"><i class="icon icon-square icon-scc-pos-sq-candle"></i>Sector CandleGlance</a></li>
+                    <li><a href="/freecharts/rrg/?s=xlb,xlc,xle,xlf,xli,xlk,xlp,xlre,xlu,xlv,xly&amp;b=spy"><i class="icon icon-square icon-scc-pos-sq-rrg"></i>Sector RRG</a></li>
+                </ul>
+            </div>
+        </div><!-- end of SECTION LINKS ROW -->
+    </div><!-- end of #PAGEBODY -->
+
+    <!-- SCC FOOTER -->
+    <footer id="scc-footer" class="footer-blue">
+        <!-- UPPER -->
+        <div id="footer-upper">
+            <div class="container">
+                <!-- NEWSLETTER -->
+                <div id="newsletter">
+                    <div class="bg-cw"></div>
+                    <div class="col-lg-6 col-md-7 col-xs-12">
+                        <h4>Expert market commentary delivered right to your inbox, <span>for free.</span></h4>
+                        <p>Sign up for our weekly ChartWatchers Newsletter</p>
+                    </div>
+                    <div class="input-col col-lg-6 col-md-5 col-xs-12">
+                        <!-- MC SIGNUP -->
+                        <div id="mc_embed_signup" class="form-group">
+                            <form action="https://stockcharts.us17.list-manage.com/subscribe/post?u=3353671ea8af8c5eab80183ab&amp;id=7b214beb69" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" rel="noopener noreferrer" novalidate="">
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group" style="display:inline-block; vertical-align:middle; width:calc(100% - 110px); margin:0 5px 0 0;">
+                                        <input type="email" value="" name="EMAIL" placeholder="Enter Your Email" class="required email form-control input-lg" id="mce-EMAIL" aria-label="Enter Your Email">
+                                    </div>
+                                    <div class="clear btn-row" style="display:inline-block; vertical-align:middle;">
+                                        <input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-green btn-rounded btn-md btn-margin-0">
+                                    </div>
+                                    <div id="mce-responses" class="clear">
+                                        <div class="response" id="mce-error-response" style="display:none"></div>
+                                        <div class="response" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3353671ea8af8c5eab80183ab_7b214beb69" tabindex="-1" value="" aria-label="Sign Up"></div>
+                                </div>
+                            </form>
+                        </div><!-- end of MC SIGNUP -->
+                        <div class="more-link">
+                            <a href="/newsletter/">Learn&nbsp;More&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end of UPPER -->
+        <!-- LOWER -->
+        <div id="footer-lower">
+            <div class="container">
+                <!-- SITELINKS -->
+                <div id="sitelinks" class="clearfix">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <h4>On&nbsp;StockCharts</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="/freecharts/">Charts &amp; Tools</a></li>
+                            <li><a href="/articles/">Articles</a></li>
+                            <li><a href="/tv/">StockCharts TV</a></li>
+                            <li><a href="//school.stockcharts.com">ChartSchool</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <h4>Members</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="/def/servlet/Favorites.CServlet">Your Dashboard</a></li>
+                            <li><a href="/def/servlet/Favorites.CServlet#chartlists">Your ChartLists</a></li>
+                            <li><a href="/def/servlet/ScanUI">Advanced Scans</a></li>
+                            <li><a href="/h-mem/useralertsummary.html">Technical Alerts</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <h4>Help</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="//support.stockcharts.com">Support Center</a></li>
+                            <li><a href="//support.stockcharts.com/doku.php?id=faqs">FAQs</a></li>
+                            <li><a href="/support/techsupport.html">Contact Us</a></li>
+                            <li><a href="/freecharts/catalog/">Symbol Catalog</a></li>
+                            <li><a href="/pricing/">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <h4>Company</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/press/">Press</a></li>
+                            <li><a href="/careers/">Careers</a></li>
+                            <li><a href="//store.stockcharts.com/">StockCharts Store</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                </div>
+                <!-- LOGO -->
+                <div id="logo-col" class="col-xs-12">
+                    <a href="/">
+                        <img src="//d.stockcharts.com/img/scc-logo-light.png" alt="StockCharts.com Logo" class="footer-logo">
+                    </a>
+                    <!-- SOCIAL LINKS -->
+                    <ul id="social-links" class="list-inline list-unstyled">
+                        <li><a href="https://www.facebook.com/stockchartsdotcom" target="_blank" aria-label="StockCharts Facebook Page" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/stockcharts" target="_blank" aria-label="StockCharts Twitter Page" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/user/stockchartscom" target="_blank" aria-label="StockCharts YouTube Page" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/stockcharts.com-inc." target="_blank" aria-label="StockCharts LinkedIn Page" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                <!-- COPYRIGHT -->
+                <div id="copyright-col" class="col-xs-12">
+                    <p class="copyright">©&nbsp;StockCharts.com,&nbsp;Inc. All&nbsp;Rights&nbsp;Reserved.</p>
+                    <ul class="list-inline list-unstyled">
+                        <li><a href="//support.stockcharts.com/doku.php?id=policies:terms_of_service" target="_blank" rel="noopener noreferrer">Terms&nbsp;of&nbsp;Service</a></li>
+                        <li><a href="//support.stockcharts.com/doku.php?id=policies:privacy_statement" target="_blank" rel="noopener noreferrer">Privacy&nbsp;Statement</a></li>
+                        <li><a href="/sitemap.html" target="_blank">Site&nbsp;Map</a></li>
+                    </ul>
+                </div>
+                <!-- LEGAL -->
+                <div id="legal-col" class="col-lg-10 col-lg-offset-1 col-xs-12">
+                    <p class="legal">Market data provided by <b>Xignite, Inc</b>. Commodity and historical index data
+                        provided by
+                        <b>Pinnacle Data Corporation</b>. Cryptocurrency data provided by <b>CryptoCompare</b>. Unless
+                        otherwise indicated,
+                        all data is delayed by 15 minutes. The information provided by StockCharts.com, Inc. is not
+                        investment advice.
+                        Trading and investing in financial markets involves risk. You are responsible for your own
+                        investment&nbsp;decisions.
+                    </p>
+                </div>
+            </div>
+        </div><!-- end of LOWER -->
+    </footer><!-- end of SCC FOOTER -->
+    
+    <!-- JAVASCRIPT WARNING -->
+    <noscript>
+        <div class="alert alert-danger" role="alert">
+            <h2>Attention: your browser does not have JavaScript enabled!</h2>
+            <p><b>In order to use StockCharts.com successfully, you must enable JavaScript in your browser.</b><br /><a
+                    href="https://www.enable-javascript.com" target="_blank" aria-label="Instructions to Enable JavaScript"
+                    rel="noopener noreferrer">Click Here</a> to learn how to enable JavaScript.</p>
+        </div>
+    </noscript>
+
+    <script type="text/javascript" src="//d.stockcharts.com/freecharts/perf.js"></script>
+
+    <!-- CUSTOM SCRIPTS -->
+    <script>
+        var cDomain = "//"+window.location.hostname;
+        var summaryData = null;
+        var view;
+        var group;
+        var column = 5;
+        var groupName = "";
+        var lastDate = "";
+        var intradayDate = "";
+        var offset = 0;
+        var sectorData = new Array();
+        var sectorTable;
+
+        $(function () {
+            var dtDom = '<"table-controls-top clearfix"<"table-toolbar btn-row"B>fr><"table-responsive"t><"table-controls-bottom clearfix"i>';
+
+            var periodHTML = $('<div class="form-group"><label for="select_period" class="label-sm">Period</label><select class="form-control input-sm" id="select_period" onchange="onChangePeriod(); return false;" name="select_period"><option name="Intraday" value="0" selected="selected">Intraday</option><option name="End-of-Day" value="1">End-of-Day</option><option name="One Week" value="2">One Week</option><option name="One Month" value="3">One Month</option><option name="Three Month" value="4">Three Month</option><option name="Six Month" value="5">Six Month</option><option name="YTD" value="7">YTD</option><option name="One Year" value="6">One Year</option></select></div>');
+
+            var checkboxHTML = $('<div id="hidepennyWrap" class="form-group fa-checkbox fa-checkbox-sm"><input id="hidepenny" name="hidepenny" type="checkbox" checked="checked"/><label for="hidepenny">Hide stocks under $1</label></div>');
+
+            // var canvas = $('<canvas></canvas>')[0];
+            // if (!canvas || !canvas.getContext) {
+            // displayErrorMessage('Your browser is outdated. Please upgrade to the latest version of <a href="https://mozilla.org">Firefox</a> or <a  href="https://google.com/chrome">Chrome</a>.');
+            // return;
+            // }
+
+            sectorTable = $('#sectorTable').DataTable({
+                dom: dtDom,
+                buttons: [
+                    {
+                        extend: 'colvis',
+                        columns: '1,2,3,4,5,6,7',
+                        text: 'Columns'
+                    }
+                ],
+                columnDefs: [{orderable: false, targets: [0, 8, 9]}, {orderSequence: ["desc"], targets: [3]}],
+                pageLength: 2000,
+                "order": [7, "desc"],
+                "deferRender": true,
+                // stateSave: true,
+                data: sectorData,
+                "createdRow": function (row, data, index) {
+                    $('td', row).eq(0).addClass('links links-first');
+                    $('td', row).eq(9).addClass('links links-last');
+                    var close = data[5];
+                    if (close < 1) {
+                        $(row).addClass('hidepenny');
+                        $(row).hide();
+                    }
+                },
+                language: {
+                    search: "<label class='label-sm' aria-hidden=\"true\">&nbsp;</label>_INPUT_",
+                    searchPlaceholder: "Search Table",
+                },
+                columns: [
+                    {title: ''},
+                    {title: 'Symbol', "width": '10%'},
+                    {title: 'Name', "width": '45%'},
+                    {title: 'SCTR'},
+                    {title: 'U'},
+                    {title: 'Close'},
+                    {title: 'Chg'},
+                    {title: '% Chg'},
+                    {title: '', "width": '10%'},
+                    {title: '', "width": '5%'}
+                ]
+            });
+
+            $('.dataTables_filter').addClass('form-group');
+
+            $('.buttons-colvis').addClass('btn btn-white btn-sq');
+
+            $('.dt-buttons').prepend(periodHTML);
+
+            $('.table-toolbar').append(checkboxHTML);
+
+            $("#hidepenny").prop('checked', true);
+
+            $("#hidepenny").change(function () {
+                if ($("#hidepenny").prop('checked') == false) {
+                    $("tr.hidepenny").show();
+                } else {
+                    $("tr.hidepenny").hide();
+                }
+            });
+
+            if (!$.cookie('SCCLogin2')) {
+                $('#select_period option[value="0"]').remove();
+                $('#select_period option[value="1"]').prop('selected');
+                offset = 1;
+            } else {
+                $('#login_prompt').hide();
+            }
+
+            offset = getQueryVariable("O");
+
+            if (offset != "") {
+                var option = $('#select_period  option[value="' + offset + '"]');
+                // name = option.text();
+                // var html = '<span>' + name + '</span><i class="fa fa-angle-down"></i>';
+                // $('#period-btn').html(html);
+                $('#select_period').val(offset);
+            }
+
+            setupTable();
+        });
+
+        function onChangePeriod() {
+            offset = $("#select_period").val();
+            if (group == "SECTOR_SPDR") {
+                window.location = "/freecharts/sectorsummary.html?O=" + offset;
+            } else {
+                var bread = $("#breadcrumb").html();
+                var O = getQueryVariable("O");
+                var oldOffset = "?O=" + O;
+                var newOffset = "?O=" + offset;
+                bread = bread.replace(oldOffset, newOffset);
+                bread = bread.replace(oldOffset, newOffset);
+                $("#breadcrumb").html(bread);
+            }
+            // name = $("#select_period").text();
+            // var html = '<span>' + name + '</span><i class="fa fa-angle-down"></i>';
+            // $('#period-btn').html(html);
+
+            if (offset === 0) {
+                setupTable();
+            } else {
+                loadData();
+            }
+        }
+
+        function doSetGroup(groupName) {
+            group = groupName;
+            doNav();
+        }
+
+        function doNav() {
+            var url = 'sectorsummary.html';
+            url = url + '?G=' + group + window.location.hash;
+            location.href = url;
+        }
+
+        function getHashVariable(variable) {
+            var query = window.location.hash.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return '';
+        }
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return '';
+        }
+
+        function getPctChg(pctChgValues, offset) {
+            if (pctChgValues == '') {
+                return 0.00;
+            }
+
+            var c = pctChgValues.split(',');
+            var pctChg = c[offset];
+            if (pctChg === 'NaN') {
+                return 'undef';
+            }
+
+            if (pctChg === 'null') {
+                return 0;
+            }
+
+            return parseFloat(pctChg).toFixed(2);
+        }
+
+        function getChg(chgValues, offset) {
+            if (chgValues == '') {
+                return 0;
+            }
+
+            var c = chgValues.split(',');
+            var chg = c[offset];
+            if (chg === 'NaN') {
+                return 'undef';
+            }
+
+            if (chg === 'null') {
+                return 0;
+            }
+
+            return parseFloat(chg).toFixed(2);
+        }
+
+        function loadTable() {
+            sectorTable.clear().rows.add(sectorData);
+            sectorTable.draw();
+        }
+
+        function loadData() {
+            if (offset != 1) {
+                $('#report-date').html(intradayDate);
+            } else {
+                $('#report-date').html(lastDate);
+            }
+
+            sectorData = new Array();
+            for (i = 0; i < summaryData.length; i++) {
+                var close = summaryData[i].closePrince;
+                var precision = 2;
+                var diff = getChg(summaryData[i].chg, offset);
+                var pctDiff = getPctChg(summaryData[i].pctChg, offset);
+                if (Math.abs(close) < .001 && close > 0) {
+                    precision = 4;
+                } else if (Math.abs(close) < .01 && close > 0) {
+                    precision = 3;
+                }
+
+                if (offset !== 0) {
+                    close = parseFloat(summaryData[i].lastClose).toFixed(precision);
+                } else {
+                    close = parseFloat(summaryData[i].closePrice).toFixed(precision);
+                }
+
+                var childInfo = summaryData[i].childCount.toString();
+                var childMembers = summaryData[i].childMembers;
+                if (summaryData[i].childCount > 0 && summaryData[i].childCount <= 11) {
+                    childInfo += "," + summaryData[i].childMembers;
+                }
+
+                var childCount = summaryData[i].childCount;
+                var sym = summaryData[i].sym;
+
+                var td = '<a href="/freecharts/symbolsummary.html?sym=' + sym + '" title="Symbol Summary"><i class="far fa-file-invoice-dollar"></i></a>';
+                td += '<a href="/h-sc/ui?s=' + sym + '" title="SharpChart"><i class="icon icon-square icon-scc-pos-sq-sharp"></i></a>';
+                td += '<a href="/acp/?s=' + sym + '" title="ACP"><i class="icon icon-square icon-scc-pos-sq-acp"></i></a>';
+                td += '<a href="/freecharts/gallery.html?' + sym + '" title="GalleryView"><i class="icon icon-square icon-scc-pos-sq-gallery"></i></a>';
+                td += '<a href="/def/servlet/SC.pnf?c=' + sym + ',P" title="P&F"><i class="icon icon-square icon-scc-pos-sq-pnf"></i></a>';
+                td += '<a href="/freecharts/seasonality.php?symbol=' + sym + '" title="Seasonality"><i class="icon icon-square icon-scc-pos-sq-season"></i></a>';
+                
+                var groupLinks = "&nbsp;";
+                if (childCount > 0) {
+                    groupLinks = '<a HREF="/freecharts/carpet.html?['
+                            + sym.replace("$", "") + ']" title="MarketCarpet"><i class="icon icon-square icon-scc-pos-sq-marketcarpet"></i></a>';
+                    if (childCount <= 25) {
+                        groupLinks += '<a HREF="/freecharts/perf.html?' + sym + ','
+                                + childMembers + '" title="PerfChart"><i class="icon icon-square icon-scc-pos-sq-perfchart"></i></a>';
+                        if ($.cookie('SCCLogin2')) {
+                            groupLinks += '<a HREF="/freecharts/rrg?s=' + sym + ','
+                                    + childMembers + '" title="RRG"><i class="icon icon-square icon-scc-pos-sq-rrg"></i></a>';
+                        }
+                    }
+                }
+
+                var color = "//d.stockcharts.com/images/greengrad.gif";
+                var barWidth = pctDiff * 4;
+                if (Math.abs(barWidth) > 80) {
+                    barWidth = 80;
+                }
+                if (Math.abs(close) < .001 && close > 0) {
+                    precision = 4;
+                } else if (Math.abs(close) < .01 && close > 0) {
+                    precision = 3;
+                }
+
+                if (pctDiff < 0) {
+                    color = "//d.stockcharts.com/images/redgrad.gif";
+                }
+
+                if (offset == 1) {
+                    close = parseFloat(close).toFixed(precision);
+                } else {
+                    close = parseFloat(close).toFixed(precision);
+                }
+                var bar = ('<img width=\"' + Math.abs(barWidth) + '\" height=\"10\" src=\"' + color + '\">');
+                var nameLink;
+                if (summaryData[i].childCount == 0) {
+                    nameLink = "<a href='/h-sc/ui?s=" + summaryData[i].sym + "'>"
+
+                } else {
+                    nameLink = '<a href="sectorsummary.html?&G=SECTOR_' + summaryData[i].sym.replace("$", "") + '&O=' + offset + '">';
+                }
+                nameLink = nameLink + summaryData[i].name + '</a>';
+                var symbol = '<span data-sym="">' + summaryData[i].sym + '</span>';
+                var d = [td, symbol, nameLink, summaryData[i].sctr, summaryData[i].univ, close, diff, pctDiff, bar, groupLinks];
+                sectorData.push(d);
+            }
+            loadTable();
+
+            $('#loading-wrapper').show();
+            $('#loading-spinner').hide();
+        }
+
+        var setupTable = function () {
+            //offset = getQueryVariable("O");
+            group = getQueryVariable('G').toUpperCase();
+            if (offset == '' && !$.cookie('SCCLogin2')) {
+                offset = 1;
+            } else {
+                if (offset == '') {
+                    offset = 0;
+                } else {
+                    offset = parseInt(offset);
+                }
+            }
+
+            if (group == '') {
+                group = 'SECTOR_SPDR';
+            }
+
+            if (group != 'SECTOR_SPDR') {
+                $('#sp-perf').html('');
+                $('#instructions').hide();
+            }
+
+            if (group.indexOf('SECTOR_D') == -1) {
+                $('#hidepennyWrap').hide();
+            } else {
+                $('#hidepennyWrap').show();
+            }
+
+            switch (view) {
+                default:
+                    break;
+                case 'I':
+                    if (!$.cookie('SCCLogin2')) {
+                        offset = 1;
+                        break;
+                    }
+                    offset = 0;
+                    break;
+                case 'E':
+                    $('#select_Date').val('1').prop('selected', true);
+                    offset = 1;
+                    break;
+                case 'W':
+                    $('#select_Date').val('2').prop('selected', true);
+                    offset = 2;
+                    break;
+                case 'M':
+                    $('#select_Date').val('3').prop('selected', true);
+                    offset = 3;
+                    break;
+                case 'T':
+                    $('#select_Date').val('4').prop('selected', true);
+                    offset = 4;
+                    break;
+                case 'S':
+                    $('#select_Date').val('5').prop('selected', true);
+                    offset = 5;
+                    break;
+                case 'Y':
+                    $('#select_Date').val('6').prop('selected', true);
+                    offset = 6;
+                    break;
+            }
+
+            $('#select_Date').val(offset).prop('selected', true);
+            try {
+               $.ajax({
+                    url: cDomain+"/j-sum/sum",
+                    dataType: 'json',
+                    data: {
+                        cmd: "perf", 
+                        group: group, 
+                        view: view,
+                        r: Math.random()
+                    },
+                    xhrFields: {withCredentials: true},
+                    success: function(data) {
+                       var a = new Array();
+                       for (var key in data) {
+                           var cur = data[key];
+                           if (cur.groupName) {
+                               groupName = cur.groupName;
+                           } else if (cur.sym) {
+                               a.push(cur);
+                           } else {
+                               if (cur.lastdate) {
+                                   lastDate = cur.lastdate;
+                               }
+                               if (cur.intraday) {
+                                   intradayDate = cur.intraday;
+                               }
+                           }
+                       }
+                       var bread = '<a href=\"sectorsummary.html?O=' + offset + '\"> S&amp;P Sectors</a>';
+                       if (cur.parentGroup == "SECTOR_SPDR") {
+                           bread = bread + ' &raquo; <a href=\"sectorsummary.html?O=' + offset + '&G=' + group + '\">' + groupName + '</a>';
+                       } else if (cur.parentGroup != "none") {
+                           bread = bread + ' &raquo; <a href=\"sectorsummary.html?O=' + offset + '&G=' + cur.parentGroup + '\">' + cur.parentGroupName + '</a>';
+                       }
+                       $('#breadcrumb').html(bread);
+                       var html = '<span>' + groupName + '</span><i class="far fa-angle-down"></i>';
+                       $('#sectorFundsMenu').html(html);
+                       summaryData = a;
+                       loadData();
+                    }
+                });
+
+            } catch (e) {
+
+            }
+        };
+
+        $("#sectorFundsList a").click(function (e) {
+            var sector = $(this).data('value');
+            var param = '';
+            if (sector != 'SPDR') {
+                param = '?G=SECTOR_' + $(this).data('value')
+            }
+            var url = 'sectorsummary.html' + param;
+            location.href = url;
+        });
+
+        $(document).tooltip({
+            items: "[data-sym]",
+            content: function () {
+                var element = $(this);
+                var symbol = element.text();
+                return "<img src='"+cDomain+"/c-sc/sc?chart=" + encodeURIComponent(symbol) + ",uu[290,a]dalayaci[dd]&r=" + Math.random() + "'>";
+            }
+        });
+    </script><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+    
+
+</body></html>
