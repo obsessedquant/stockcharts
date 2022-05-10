@@ -1,0 +1,137 @@
+<div id="symbolgrid">
+	<table class="symbolgrid">
+		<thead>
+			<tr>
+				<th>chart</th>
+				<th>visible</th>
+				<th class="sort-descending">tail</th>
+				<th>symbol</th>
+				<th>name</th>
+				<th>sector</th>
+				<th>industry</th>
+				<th>price</th>
+				<th>%chg</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="row green">
+				<td align="center" class="chart">
+					<a href="/h-sc/ui?s=$DJUSFC">
+						<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+					</td>
+					<td align="center" class="visible">
+						<input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"/>
+						<td align="left" class="tail">
+							<img src="/freecharts/rrg/greenbar.png" width="25" height="10" alt="bar icon"/>
+							<td align="right" class="symbol">$DJUSFC</td>
+							<td align="right" class="name">Dow Jones US Fixed Line Telecommunications Index</td>
+							<td align="right" class="sector"/>
+							<td align="right" class="industry"/>
+							<td align="right" class="price">115.41</td>
+							<td align="left" class="chg">
+								<img src="/freecharts/rrg/greenbar.png" width="13" height="10" alt="bar icon"> 4.8</td>
+							</tr>
+							<tr class="row blue">
+								<td align="center" class="chart">
+									<a href="/h-sc/ui?s=$DJUSNS">
+										<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+									</td>
+									<td align="center" class="visible">
+										<input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"/>
+										<td align="left" class="tail">
+											<img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"/>
+											<td align="right" class="symbol">$DJUSNS</td>
+											<td align="right" class="name">Dow Jones US Internet Index</td>
+											<td align="right" class="sector"/>
+											<td align="right" class="industry"/>
+											<td align="right" class="price">2543.99</td>
+											<td align="left" class="chg">
+												<img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -16.4</td>
+											</tr>
+											<tr class="row blue">
+												<td align="center" class="chart">
+													<a href="/h-sc/ui?s=$DJUSAV">
+														<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+													</td>
+													<td align="center" class="visible">
+														<input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"/>
+														<td align="left" class="tail">
+															<img src="/freecharts/rrg/bluebar.png" width="34" height="10" alt="bar icon"/>
+															<td align="right" class="symbol">$DJUSAV</td>
+															<td align="right" class="name">Dow Jones US Media Agencies Index</td>
+															<td align="right" class="sector"/>
+															<td align="right" class="industry"/>
+															<td align="right" class="price">485.12</td>
+															<td align="left" class="chg">
+																<img src="/freecharts/rrg/redbar.png" width="30" height="10" alt="bar icon"> -11.1</td>
+															</tr>
+															<tr class="row yellow">
+																<td align="center" class="chart">
+																	<a href="/h-sc/ui?s=$DJUSWC">
+																		<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+																	</td>
+																	<td align="center" class="visible">
+																		<input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"/>
+																		<td align="left" class="tail">
+																			<img src="/freecharts/rrg/yellowbar.png" width="18" height="10" alt="bar icon"/>
+																			<td align="right" class="symbol">$DJUSWC</td>
+																			<td align="right" class="name">Dow Jones US Mobile Telecommunications Index</td>
+																			<td align="right" class="sector"/>
+																			<td align="right" class="industry"/>
+																			<td align="right" class="price">357.27</td>
+																			<td align="left" class="chg">
+																				<img src="/freecharts/rrg/redbar.png" width="24" height="10" alt="bar icon"> -9.0</td>
+																			</tr>
+																			<tr class="row red">
+																				<td align="center" class="chart">
+																					<a href="/h-sc/ui?s=$DJUSBC">
+																						<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+																					</td>
+																					<td align="center" class="visible">
+																						<input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"/>
+																						<td align="left" class="tail">
+																							<img src="/freecharts/rrg/redbar.png" width="37" height="10" alt="bar icon"/>
+																							<td align="right" class="symbol">$DJUSBC</td>
+																							<td align="right" class="name">Dow Jones US Broadcasting &amp; Entertainment Index</td>
+																							<td align="right" class="sector"/>
+																							<td align="right" class="industry"/>
+																							<td align="right" class="price">1262.68</td>
+																							<td align="left" class="chg">
+																								<img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -19.0</td>
+																							</tr>
+																							<tr class="row red">
+																								<td align="center" class="chart">
+																									<a href="/h-sc/ui?s=$DJUSPB">
+																										<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+																									</td>
+																									<td align="center" class="visible">
+																										<input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"/>
+																										<td align="left" class="tail">
+																											<img src="/freecharts/rrg/redbar.png" width="24" height="10" alt="bar icon"/>
+																											<td align="right" class="symbol">$DJUSPB</td>
+																											<td align="right" class="name">Dow Jones US Publishing Index</td>
+																											<td align="right" class="sector"/>
+																											<td align="right" class="industry"/>
+																											<td align="right" class="price">483.80</td>
+																											<td align="left" class="chg">
+																												<img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -21.4</td>
+																											</tr>
+																											<tr class="row white">
+																												<td align="center" class="chart">
+																													<a href="/h-sc/ui?s=$SPX">
+																														<img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"/>
+																													</td>
+																													<td align="center" class="visible"/>
+																													<td align="left" class="tail"/>
+																													<td align="right" class="symbol">$SPX</td>
+																													<td align="right" class="name">S&amp;P 500 Large Cap Index</td>
+																													<td align="right" class="sector"/>
+																													<td align="right" class="industry"/>
+																													<td align="right" class="price">3991.24</td>
+																													<td align="left" class="chg">
+																														<img src="/freecharts/rrg/redbar.png" width="30" height="10" alt="bar icon"> -11.1</td>
+																													</tr>
+																												</tbody>
+																											</table>
+																										</div>
+																									</div>
