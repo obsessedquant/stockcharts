@@ -1,0 +1,632 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- META DESCRIPTION -->
+    <meta name="description" content="Unique charts that allow you to visualize the relative strength and momentum for a specific group of stocks, ETFs or other securities">
+    <!-- META KEYWORDS -->
+    <meta name="keywords" content="rrg, rrg charts, relative rotation graph, relative strength, technical analysis, charts, stock charts, financial charts, stocks, etfs">
+    <!-- CONTENT SECURITY POLICY -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; img-src 'self' data: https:; default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'; worker-src blob:; media-src https: data:">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="//d.stockcharts.com/favicon.gif" type="image/gif">
+
+    <title>Relative Rotation Graphs | RRG Charts | StockCharts.com</title>
+    
+    <!-- BOOTSTRAP CSS -->
+    <link href="//d.stockcharts.com/vendor/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- GOOGLE FONTS -->
+    <link href="//d.stockcharts.com/css/google-fonts.css" rel="stylesheet" type="text/css">
+    <!-- SCC CSS -->
+    <link href="//d.stockcharts.com/css/lib/scc-icons-square.css" rel="stylesheet" type="text/css">
+    <link href="//d.stockcharts.com/css/scc-universal.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//d.stockcharts.com/freecharts/freecharts2.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//d.stockcharts.com/freecharts/rrg/rrg-v2.css" rel="stylesheet" type="text/css">
+    <!-- FONT AWESOME -->
+    <link href="//d.stockcharts.com/font-awesome/css/all.css" rel="stylesheet" type="text/css" media="all">
+    <!-- JQUERY -->
+    <script type="text/javascript" async="" src="https://www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1072529189&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="//d.stockcharts.com/vendor/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+    <!-- JQUERY EASING -->
+    <script src="//d.stockcharts.com/vendor/jquery-easing/1.4.1/jquery.easing.min.js" type="text/javascript" async=""></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="//d.stockcharts.com/vendor/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- SCC JS -->
+    <script src="//d.stockcharts.com/js/scc-universal-v2.js" type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-88248853-1"></script>
+    <script src="//d.stockcharts.com/freecharts/freecharts.js" type="text/javascript"></script>
+
+    <!-- FREESTAR -->
+    <script data-cfasync="false" type="text/javascript">
+        if (!isLoggedIn()) {
+            var freestar = freestar || {};
+            freestar.hitTime = Date.now();
+            freestar.queue = freestar.queue || [];
+            freestar.config = freestar.config || {};
+            freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+
+            // Tag IDs set here, must match Tags served in the Body for proper setup
+            freestar.config.enabled_slots = [
+            "StockCharts_728x90_970x90_970x250_320x50_ATF",
+            "stockcharts_300x250_300x600_Right_1",
+            "stockcharts_300x250_300x600_Right_2",
+            "stockcharts_728x90_AboveSharpChart"
+            ];
+
+            !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/stockcharts-com";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+
+        }
+        else {
+            $(function() {
+                $('.freestar-dvrt').remove();
+            });
+        }
+
+    </script>
+    <!-- end of FREESTAR -->
+
+    <style>
+        body { min-width:920px; }
+        
+        #symbolgrid-title { margin:10px; text-align:center; }
+        #symbolgrid .row { margin:0; }
+        #symbolgrid .row:before { content:none; }
+        .symbolgrid { margin:0 auto; }
+        
+        #boxad { margin:25px auto 0 auto; }
+        #expandscreen { display:none; }
+        
+        .section-links-row { margin-top:15px; }
+        
+        .freestar-dvrt { margin:12px auto; }
+    </style>
+    
+    <script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1072529189/?random=1652210562249&amp;cv=9&amp;fst=1652210562249&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_his=21&amp;u_tz=-300&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;gtm=2oa590&amp;sendb=1&amp;ig=1&amp;data=event%3Dgtag.config&amp;frm=0&amp;url=https%3A%2F%2Fstockcharts.com%2Ffreecharts%2Frrg%2F%3Fs%3DRENN%2CPCOM%2CLAUR%2CLRN%2CSCI%2CWBX%2CFRG%2CCSV%2CHRB%2CCHE%2CMCW%2CLOPE%2CGHC%2CSTON%2CHI%2CPRDO%2CSP%2CATGE%2CTMX%2CSTRA%2CUHAL%2CEBAY%2CMATW%2CYELP%2CKAR%2CMODV%2CMNRO%2CTRUE%2CAPEI%2CBFAM%2CMELI%2CRDBX%2CBLNK%2CFEDU%2CETSY%2CROVR%2CCRWG%2CFTDR%2CRCII%2CWTER%26b%3D%24USD%26p%3Dw%26y%3D1%26t%3D5%26f%3Dtail%2Cd&amp;tiba=Relative%20Rotation%20Graphs%20%7C%20RRG%20Charts%20%7C%20StockCharts.com&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script></head>
+<body>
+
+
+    <!-- SCC NAVBAR -->
+    <nav id="scc-navbar" class="navbar navbar-inverse navbar-blue navbar-static-top">
+      <div class="container-fluid">
+        <!-- NAV UPPER -->
+        <div id="nav-upper" class="row">
+          <!-- NAVBAR BRAND -->
+          <a href="/" class="navbar-brand">
+            <img src="//d.stockcharts.com/img/scc-logo-light.png" alt="StockCharts Logo" class="navbar-logo">
+            <img src="//d.stockcharts.com/img/scc-logo-icon.png" alt="StockCharts Icon" class="navbar-logo logo-icon">
+          </a>
+          <!-- MENU TOGGLE -->
+          <div id="nav-menuToggle" class="nav navbar-nav">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menuCollapse" aria-expanded="false" aria-controls="navbar-menuCollapse" aria-label="Toggle Website Navigation Menu"><i class="fas fa-bars"></i></button>
+          </div>
+          <!-- ACCOUNT LINKS -->
+          <ul id="nav-accountLinks" class="nav navbar-nav">
+            <li id="nav-loginBtn" style="display: none;">
+              <a href="/login" class="btn navbar-btn btn-transparent">Log In</a>
+            </li>
+            <li id="nav-signUpBtn" style="display: none;">
+              <a href="/checkout/freetrial/" class="btn navbar-btn btn-green">Free Trial</a>
+            </li>
+            <li id="nav-userProfile" class="dropdown" style="display: list-item;">
+              <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-user-circle"></i><span id="nav-userID">Samuel</span><i class="far fa-fw fa-angle-down"></i>
+              </a>
+              <ul id="nav-userMenu" class="dropdown-menu">
+                <li><a href="/def/servlet/Favorites.CServlet#chartlists"><i class="fas fa-fw fa-user-chart"></i>&nbsp;&nbsp;Your
+                  ChartLists</a></li>
+                <li><a href="/def/servlet/ScanUI"><i class="fal fa-fw fa-sliders-h"></i>&nbsp;&nbsp;Your Scans</a></li>
+                <li><a href="/h-mem/useralertsummary.html"><i class="far fa-fw fa-bell"></i>&nbsp;&nbsp;Your Alerts</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/youracct"><i class="fas fa-fw fa-cogs"></i>&nbsp;&nbsp;Your Account</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="//support.stockcharts.com"><i class="fas fa-fw fa-question-circle"></i>&nbsp;&nbsp;Support
+                  Center</a></li>
+                <li><a href="/support/techsupport.html"><i class="far fa-fw fa-envelope"></i>&nbsp;&nbsp;Contact Us</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/logout"><i class="fas fa-fw fa-sign-out-alt"></i>&nbsp;&nbsp;Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- CHART SEARCH -->
+          <form id="nav-chartSearch" class="input-group" role="search" onsubmit="return chartSearch('nav-chartSearch');">
+            <div class="input-group-btn dropdown">
+              <button type="button" id="nav-chartSearch-btn" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SharpChart <i class="far fa-angle-down"></i>
+              </button>
+              <input type="hidden" id="nav-chartSearch-type" name="searchoptions" value="sharpChart">
+              <ul class="dropdown-menu" id="nav-chartSearch-menu">
+                <li>
+                  <a href="#" data-val="symSum">
+                    <span class="item-label"><i class="far fa-file-invoice-dollar"></i>Symbol Summary</span>
+                    <span class="item-star"><i class="far fa-star"></i></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-val="sharpChart">
+                    <span class="item-label"><i class="icon icon-scc-pos-sq-sharp"></i>SharpChart</span>
+                    <span class="item-star starred"><i class="far fa-star"></i></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-val="acp">
+                    <span class="item-label"><i class="icon icon-scc-pos-sq-acp"></i>ACP</span>
+                    <span class="item-star"><i class="far fa-star"></i></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-val="pnf">
+                    <span class="item-label"><i class="icon icon-scc-pos-sq-pnf"></i>Point &amp; Figure</span>
+                    <span class="item-star"><i class="far fa-star"></i></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-val="gallery">
+                    <span class="item-label"><i class="icon icon-scc-pos-sq-gallery"></i>GalleryView</span>
+                    <span class="item-star"><i class="far fa-star"></i></span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#" data-val="perf"><i class="icon icon-scc-pos-sq-perfchart"></i>PerfChart</a></li>
+                <li><a href="#" data-val="candleGlance"><i class="icon icon-scc-pos-sq-candle"></i>CandleGlance</a></li>
+                <li><a href="#" data-val="seasonality"><i class="icon icon-scc-pos-sq-season"></i>Seasonality</a></li>
+                <li><a href="#" data-val="rrg"><i class="icon icon-scc-pos-sq-rrg"></i>RRG</a></li>
+                <li class="divider"></li>
+                <li><a href="#" data-val="symSearch"><i class="fas fa-search-plus"></i>Symbol Lookup</a></li>
+              </ul>
+            </div>
+            <input type="text" id="nav-chartSearch-input" class="form-control" placeholder="Enter Symbol or Name" aria-label="Search for a Security" autocomplete="off" style="font-style: normal; color: rgb(0, 0, 0);">
+            <span class="input-group-btn">
+              <button id="nav-chartSearch-submit" class="btn btn-default btn-submit" type="submit">Go</button>
+            </span>
+          </form>
+        </div><!-- end of NAV UPPER -->
+        <!-- NAV LOWER -->
+        <div id="nav-lower">
+          <!-- MENU COLLAPSE -->
+          <div id="navbar-menuCollapse" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav sitelinks">
+              <li><a href="/freecharts/">Charts &amp; Tools</a></li>
+              <li><a href="/articles/">Articles</a></li>
+              <li><a href="/tv/">StockCharts TV <span class="label label-tv-live">LIVE</span></a></li>
+              <li><a href="//school.stockcharts.com">ChartSchool</a></li>
+              <li class="dashboard"><a href="/def/servlet/Favorites.CServlet"><span class="hide-sm">Your&nbsp;</span>Dashboard</a></li>
+            </ul>
+            <ul class="nav navbar-nav sitelinks pull-right">
+              <li><a href="//store.stockcharts.com">Store</a></li>
+              <li><a href="//support.stockcharts.com">Help</a></li>
+            </ul>
+            <div id="nav-siteSearch-wrap">
+              <form id="nav-siteSearch" role="search" action="/search/">
+                <input type="search" id="nav-siteSearch-input" placeholder="Search StockCharts" name="q" required="" aria-label="Search StockCharts">
+                <input type="submit" id="nav-siteSearch-submit" value="Go">
+                <span id="nav-siteSearch-icon"></span>
+              </form>
+            </div>
+          </div><!-- end of MENU COLLAPSE -->
+        </div><!-- end of NAV LOWER -->
+      </div>
+    </nav><!-- end of SCC NAVBAR -->
+
+<div id="pagebody" class="container-fluid">
+    <div class="row charting-tool-row-outer">
+    
+            <div id="chart-body">
+
+            <div id="page-header">
+                <h1 class="page-title">Relative Rotation Graph (RRG)</h1>
+            </div>
+
+            <!-- Tag ID: StockCharts_728x90_970x90_970x250_320x50_ATF -->
+            
+
+            <div id="rrg"><!--  width:915px; margin:0 auto; text-align:center; -->
+             <form onsubmit="return rrg.submit();">
+                <div class="box">
+                   <table id="ui">
+                      <tbody><tr class="membercontent">
+                         <td valign="middle" colspan="3">
+                            Symbols: <input id="symbols" type="text" value="" size="50" aria-label="Symbols">&nbsp;
+                            Benchmark: <input id="benchmark" type="text" value="" size="8" aria-label="Benchmark">&nbsp;
+                            Groups:
+                            <select id="predef">
+                            	<option value="" selected="true">- Select -</option>
+                            	<option value="s=$USD,DJP,GSG,HYG,GOVT,LQD,SPY,VNQ&amp;b=VBINX">Asset Allocation</option>
+                            	<option value="" disabled="">US SECTORS</option>
+                            	<option value="s=xlb,xlc,xle,xlf,xli,xlk,xlp,xlre,xlu,xlv,xly&amp;b=spy">S&amp;P 500 Sector ETFs</option>
+				<option value="s=RYH,RCD,RGI,EWRE,RTM,RHS,RYT,EWCO,RYF,RYE,RYU&amp;b=RSP">EW S&amp;P 500 Sector ETFs</option>    
+				<option value="s=FB,GOOGL,GOOG,T,VZ,CMCSA,DIS,CHTR,TMUS,NFLX,ATVI,EA,MTCH,TWTR,VIAC,TTWO,OMC,LYV,IPG,FOXA,LUMN,DISH,NWSA,DISCK,FOX,DISCA,NWS,&amp;b=XLC">XLC members</option>
+				<option value="s=AMZN,TSLA,MCD,HD,NKE,LOW,SBUX,TGT,BKNG,F,GM,TJX,DG,ORLY,MAR,CMG,APTV,AZO,HLT,EBAY,YUM,ROST,DHI,DLTR,LEN,EXPE,TSCO,VFC,BBY,ETSY,ULTA,POOL,GRMN,GPC,KMX,CZR,DRI,RCL,NVR,CCL,DPZ,MGM,LKQ,BBWI,AAP,PHM,WHR,LVS,HAS,BWA,&amp;b=XLY">XLY members</option>
+				<option value="s=PG,PEP,KO,COST,PM,MDLZ,MO,WMT,EL,CL,KMB,GIS,STZ,SYY,ADM,WBA,MNST,KR,HSY,TSN,KHC,CHD,MKC,CLX,K,CAG,SJM,HRL,BF.B,LW,TAP,CPB,&amp;b=XLP">XLP members</option>
+				<option value="s=XOM,CVX,EOG,SLB,COP,PXD,MPC,PSX,WMB,VLO,KMI,DVN,OXY,OKE,HES,HAL,BKR,FANG,CTRA,MRO,APA,&amp;b=XLE">XLE members</option>
+				<option value="s=BRK/B,JPM,BAC,WFC,MS,SCHW,C,GS,BLK,AXP,SPGI,PNC,TFC,CB,USB,MMC,CME,ICE,COF,PGR,AON,MCO,AIG,MET,BK,MSCI,PRU,SIVB,TROW,TRV,AFL,STT,DFS,FRC,AMP,ALL,AJG,FITB,WTW,NTRS,SYF,HBAN,HIG,KEY,RF,CFG,MTB,NDAQ,SBNY,RJF,&amp;b=XLF">XLF members</option>
+				<option value="s=JNJ,UNH,PFE,TMO,ABBV,ABT,MRK,LLY,DHR,MDT,BMY,CVS,AMGN,ISRG,ANTM,ZTS,GILD,SYK,CI,MRNA,EW,BDX,REGN,ILMN,BSX,HCA,VRTX,HUM,IQV,DXCM,IDXX,CNC,A,BAX,ALGN,MCK,MTD,RMD,BIIB,WST,CERN,LH,ZBH,STE,PKI,WAT,COO,ABC,CTLT,VTRS,&amp;b=XLV">XLV members</option>
+				<option value="s=UNP,UPS,HON,RTX,CAT,BA,GE,DE,MMM,LMT,CSX,ITW,NSC,ETN,FDX,WM,NOC,EMR,JCI,INFO,GD,ROP,TT,CARR,LHX,PH,ROK,OTIS,CTAS,FAST,TDG,VRSK,CMI,AME,PCAR,EFX,SWK,ODFL,CPRT,RSG,LUV,FTV,DOV,DAL,IR,URI,GWW,EXPD,XYL,GNRC,&amp;b=XLI">XLI members</option>
+				<option value="s=LIN,SHW,APD,FCX,ECL,NEM,DOW,DD,PPG,IFF,CTVA,NUE,BLL,ALB,VMC,MLM,LYB,CE,IP,AMCR,AVY,EMN,MOS,CF,FMC,PKG,WRK,SEE,&amp;b=XLB">XLB members</option>
+				<option value="s=AMT,PLD,CCI,EQIX,PSA,SPG,DLR,O,WELL,SBAC,CBRE,AVB,EQR,WY,ARE,EXR,MAA,DRE,ESS,VTR,PEAK,BXP,UDR,KIM,IRM,HST,REG,FRT,VNO,&amp;b=XLRE">XLRE members</option>
+				<option value="s=AAPL,MSFT,NVDA,V,MA,CSCO,AVGO,ADBE,ACN,CRM,INTC,PYPL,QCOM,TXN,AMD,INTU,AMAT,ORCL,IBM,NOW,MU,ADP,LRCX,ADI,FIS,KLAC,FISV,NXPI,ADSK,TEL,SNPS,APH,XLNX,MCHP,CDNS,CTSH,HPQ,FTNT,MSI,GPN,PAYX,KEYS,EPAM,ANSS,ANET,GLW,ZBRA,CDW,TER,SWKS,&amp;b=XLK">XLK members</option>
+				<option value="s=NEE,DUK,SO,D,EXC,AEP,SRE,XEL,PEG,AWK,WEC,ES,ED,EIX,DTE,AEE,FE,PPL,ETR,CMS,CNP,AES,EVRG,LNT,ATO,NI,NRG,PNW,&amp;b=XLU">XLU members</option>				
+			    	<option value="" disabled="">US MARKETS</option>
+				<option value="s=$INDU,$TRAN,$UTIL,&amp;b=$DJA">DJ Composite 65</option>    
+			    	<option value="s=AAPL,AMGN,AXP,BA,CAT,CRM,CSCO,CVX,DIS,DOW,GS,HD,HON,IBM,INTC,JNJ,JPM,KO,MCD,MMM,MRK,MSFT,NKE,PG,TRV,UNH,V,VZ,WBA,WMT,&amp;b=$indu">DJ Industrials 30</option>
+				<option value="s=AEP,AES,ATO,D,DUK,ED,EIX,EXC,FE,NEE,PEG,SO,SRE,WMB,XEL,&amp;b=$util">DJ Utility 15</option>
+				<option value="s=AAL,ALK,CAR,CHRW,CSX,DAL,EXPD,FDX,JBHT,JBLU,KEX,LSTR,LUV,MATX,NSC,ODFL,R,UAL,UNP,UPS,&amp;b=$tran">DJ Transportation 20</option>
+				<option value="s=$DJUSGR,$DJUSVA&amp;b=$DJUS">Growth/Value</option>
+				<option value="s=$DJUSL,$DJUSM,$DJUSS&amp;b=$DJUS">Size</option>
+				<option value="s=$DJUS,$DJUSGL,$DJUSGM,$DJUSGR,$DJUSGS,$DJUSL,$DJUSM,$DJUSS,$DJUSVA,$DJUSVL,$DJUSVM,$DJUSVS&amp;b=$DJUS">Growth/Value/Size</option>
+				<option value="s=$xal,$bkx,$btk,$xbd,$djusch,$xci,$ddx,$drg,$xau,$hwi,$insr,$xng,$nwx,$xoi,$osx,$djr,xrt,$sox,$xtc,$tranq,$uty&amp;b=$spx">US Industry Indexes</option>
+				<option value="s=$dja,$tran,$util,$ndx,$rui,$rut,$rua,$oex,$mid,$sml,$spx,&amp;b=$wlsh">Major Indexes</option>
+				<option value="s=$indu,$compq,$nya,$xax,$tsx,$cdnx&amp;b=$spx">Major Markets</option>
+				<option value="s=BIL,IEF,IEI,SHY,TLH,TLT&amp;b=GOVT">US Bond Maturities</option>
+				<option value="s=$UST5Y,$UST7Y,$UST1Y,$UST6M,$UST2Y,$UST10Y,$UST20Y,$UST30Y,$UST3M&amp;b=$UST7Y">US Yield Curve</option>
+				<option value""="" disabled="">CANADA</option>
+				<option value="s=$sptcd,$spttk,$sptin,$sptmt,$spten,$sptcs,$spthc,$sptut,$sptfs&amp;b=$tsx">Canada S&amp;P Sector Indexes</option>
+				<option value""="" disabled="">EUROPE</option>
+				<option value="s=$E1BSC,$E1CYC,$E1ENE,$E1FIN,$E1HCR,$E1IDU,$E1NCY,$E1TEC,$E1TLS,$E1UTI&amp;b=$E1DOW">Europe DJ Sector Indexes</option>
+				<option value="" disabled="">INDIA</option>
+				<option value="s=$CNXAUTO,$BANKNIFTY,$CNXFIN,$CNXFMCG,$CNXHEALTHCARE,$CNXIT,$CNXMEDIA,$CNXMETAL,$CNXPHARMA,$NIFTYPVTBANK,$CNXPSUBANK,$CNXREALTY,$CNXCONSUMERDURABLES,$CNXOILGAS&amp;b=$CNX500">India Sector Indexes</option>
+				<option value="s=ADANIPORTS.IN,ASIANPAINT.IN,AXISBANK.IN,BAJAJ-AUTO.IN,BAJFINANCE.IN,BAJAJFINSV.IN,BPCL.IN,BHARTIARTL.IN,BRITANNIA.IN,CIPLA.IN,COALINDIA.IN,DIVISLAB.IN,DRREDDY.IN,EICHERMOT.IN,GRASIM.IN,HCLTECH.IN,HDFCBANK.IN,HDFCLIFE.IN,HEROMOTOCO.IN,HINDALCO.IN,HINDUNILVR.IN,HFC.IN,ICICIBANK.IN,ITC.IN,IOC.IN,INDUSINDBK.IN,INFY.IN,JSWSTEEL.IN,KOTAKBANK.IN,LT.IN,MARUTI.IN,NTPC.IN,NESTLEIND.IN,ONGC.IN,POWERGRID.IN,RELIANCE.IN,SBILIFE.IN,SHREECEM.IN,SBIN.IN,SUNPHARMA.IN,TCS.IN,TATACONSUM.IN,TATAMOTORS.IN,TATASTEEL.IN,TECHM.IN,TITA.IN,UPL.IN,ULTRACEMCO.IN,WIPRO.IN&amp;b=$CNX500">NIFTY</option>
+				<option value="s=ASIANPAINT.IN,AXISBANK.IN,BAJFINANCE.IN,BHARTIARTL.IN,BAJAJAUTO.IN,BAJAJFINSV.IN,HCLTECH.IN,HDFC.IN,HDFCBANK.IN,HINDUNILVR.IN,ICICIBANK.IN,INDUSINDBK.IN,INFY.IN,ITC.IN,KOTAKBANK.IN,LT.IN,MARUTI.IN,NESTLEIND.IN,NTPC.IN,ONGC.IN,POWERGRID.IN,RELIANCE.IN,SBIN.IN,SUNPHARMA.IN,TATASTEEL.IN,TCS.IN,TECHM.IN,TITAN.IN,ULTRACEMCO.IN,M%26M.IN&amp;b=$BSE">SENSEX 30</option>"
+				<option value="" disabled="">INTERNATIONAL</option>
+				<option value="s=$BVSP,$E1DOW,$CNX500,$IDDOW,$SPX,$RTSI,$AORD,$TSX,$NIKK,$HSI,$MXX,$KOSPI,$SSEC&amp;b=$DJW">Int. Stockmarket Indexes</option>
+				<option value="s=ewa,ewo,ewk,ewc,ewq,ewg,ewh,ewi,ewj,ewm,eww,ewn,ews,ewp,ewd,ewl,ewu&amp;b=spy">International ETFs</option>
+				<option value""="" disabled="">COMMODITIES</option>
+				<option value="s=$GJX,$GKX,$GYX,$GVX,$GPX&amp;b=$GNX">S&amp;P GSCI Cdty</option>
+				<option value="" disabled="">CURRENCIES</option>
+				<option value="s=$EURUSD,$JPYUSD,$GBPUSD,$CADUSD,$CHFUSD,$AUDUSD,$NZDUSD,$NOKUSD,$SEKUSD,$DKKUSD&amp;b=$ONE">G10-FX USD base</option>
+				<option value="s=$USDEUR,$JPYEUR,$GBPEUR,$CADEUR,$CHFEUR,$AUDEUR,$NZDEUR,$NOKEUR,$SEKEUR,$DKKEUR&amp;b=$ONE">G10-FX EUR base</option>
+				<option value="s=$XMRUSD,$ADAUSD,$MIOTAUSD,$BTCUSD,$XRPUSD,$LINKUSD,$XLMUSD,$ETHUSD,$BCHUSD,$TRXUSD,$USDTUSD,$BNBUSD,$BSVUSD,$LTCUSD,$EOSUSD,$DOGEUSD&amp;b=$ONE">Crypto USD base</option>
+				<option value="s=$XMRUSD,$ADAUSD,$MIOTAUSD,$XRPUSD,$LINKUSD,$XLMUSD,$ETHUSD,$BCHUSD,$TRXUSD,$USDTUSD,$BNBUSD,$BSVUSD,$LTCUSD,$EOSUSD,$DOGEUSD&amp;b=$BTCUSD">Crypto BTC base</option>
+                            </select>&nbsp;
+                            <select id="years">
+                               <option value="1">1 year</option>
+                               <option value="3">3 years</option>
+                               <option value="5">5 years</option>
+                               <option value="10">10 years</option>
+                            </select>
+                            <select id="period">
+                               <option value="w">Weekly</option>
+                               <option value="d">Daily</option>
+                            </select>&nbsp;  
+                            <input id="update" type="submit" value="Update">&nbsp;
+                            <img id="expandscreen" class="float-right" src="expand.png" alt="Expand Screen Icon">
+                         </td>
+                      </tr>
+                      <tr>
+                         <td rowspan="3" valign="top">
+                            <div id="rrgchart"><canvas width="600" height="400" style="user-select: none;"></canvas></div>
+                         </td>
+                         <td colspan="2" valign="top">
+                             <div id="benchmarkchart"><canvas width="320" height="240" style="user-select: none;"></canvas></div>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td colspan="2" valign="middle">
+                            <div id="controls" style="">
+                               Tail Length: <div style="width: 150px; min-height: 16px; margin-left: 8px; margin-right: 8px; user-select: none; position: relative; box-sizing: border-box; display: inline-block; vertical-align: middle;"><div style="position: absolute; top: 50%; user-select: none; cursor: pointer; border: 1px solid rgb(102, 102, 102); width: 100%; height: 4px; margin-top: -3px; background: -webkit-linear-gradient(top, rgb(187, 187, 187), rgb(221, 221, 221)); border-radius: 3px;"></div><div style="position: absolute; top: 50%; user-select: none; cursor: pointer; border: 1px solid rgb(68, 68, 68); width: 14px; height: 14px; margin-top: -8px; margin-left: -8px; background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238)); border-radius: 8px; left: 25px;"></div></div><input id="taillength" type="text" value="5" aria-label="Tail Length" style="display: none;"><span class="taillength-value">5</span> <span class="period-value">weeks</span><br><br>
+                               <div class="button animate" id="animate">animate</div>
+                               <div class="button zoom" id="zoomin">＋</div>
+                               <div class="button zoom" id="zoomout">－</div>
+                               <div class="button zoom" id="zoomfit">fit</div>
+                               <div class="button zoom" id="zoomctr">ctr</div>
+                               <div class="button zoom" id="zoommax">max</div>
+                            </div>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td colspan="2" align="right" valign="bottom">
+                            <img id="resize" class="membercontent" src="corner-resize.png" alt="Resize Icon">
+                         </td>
+                      </tr>
+                   </tbody></table>
+                </div>
+             </form>
+
+             <div id="symbolgrid-title" style="">
+                <span class="taillength-value">5</span> <span class="period-value">weeks</span> ending <span id="enddate-value">May 9, 2022</span>
+             </div>
+
+             <div id="symbolgrid"><table class="symbolgrid"> 
+<thead><tr><th>chart</th><th>visible</th><th class="sort-descending">tail</th><th>symbol</th><th>name</th><th>sector</th><th>industry</th><th>price</th><th>%chg</th></tr></thead><tbody><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=STRA"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">STRA</td><td align="right" class="name">Strategic Education, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">63.15</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="26" height="10" alt="bar icon"> -9.5</td></tr><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=RENN"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">RENN</td><td align="right" class="name">Renren Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">28.73</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="40" height="10" alt="bar icon"> 29.0</td></tr><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=LOPE"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="39" height="10" alt="bar icon"></td><td align="right" class="symbol">LOPE</td><td align="right" class="name">Grand Canyon Education Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">89.69</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="27" height="10" alt="bar icon"> -10.0</td></tr><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=HRB"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="19" height="10" alt="bar icon"></td><td align="right" class="symbol">HRB</td><td align="right" class="name">H &amp; R Block, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">23.90</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="28" height="10" alt="bar icon"> -10.3</td></tr><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=LRN"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="14" height="10" alt="bar icon"></td><td align="right" class="symbol">LRN</td><td align="right" class="name">Stride Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">36.17</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="14" height="10" alt="bar icon"> 5.0</td></tr><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=TMX"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="8" height="10" alt="bar icon"></td><td align="right" class="symbol">TMX</td><td align="right" class="name">Terminix Global Holdings, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">42.64</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="19" height="10" alt="bar icon"> -6.8</td></tr><tr class="row green"><td align="center" class="chart"><a href="/h-sc/ui?s=PCOM"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/greenbar.png" width="8" height="10" alt="bar icon"></td><td align="right" class="symbol">PCOM</td><td align="right" class="name">Points Intl., Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">24.60</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="40" height="10" alt="bar icon"> 47.4</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=RDBX"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">RDBX</td><td align="right" class="name">Redbox Entertainment Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">5.69</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="40" height="10" alt="bar icon"> 194.8</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=ROVR"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">ROVR</td><td align="right" class="name">Rover Group Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">4.95</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="38" height="10" alt="bar icon"> -14.1</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=FEDU"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">FEDU</td><td align="right" class="name">Four Seasons Education, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">0.53</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="19" height="10" alt="bar icon"> -7.1</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=CRWG"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">CRWG</td><td align="right" class="name">CrowdGather Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">0.01</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="1" height="10" alt="bar icon"> 0.0</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=MODV"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">MODV</td><td align="right" class="name">ModivCare Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">97.51</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="36" height="10" alt="bar icon"> -13.3</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=EBAY"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">EBAY</td><td align="right" class="name">eBay, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">49.20</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="29" height="10" alt="bar icon"> -10.6</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=MNRO"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">MNRO</td><td align="right" class="name">Monro, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">44.28</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="5" height="10" alt="bar icon"> -1.6</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=MELI"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">MELI</td><td align="right" class="name">MercadoLibre Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">786.93</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -32.2</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=ATGE"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">ATGE</td><td align="right" class="name">Adtalem Global Education, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">32.31</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="31" height="10" alt="bar icon"> 11.5</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=APEI"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="34" height="10" alt="bar icon"></td><td align="right" class="symbol">APEI</td><td align="right" class="name">American Public Education Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">17.68</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -19.3</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=TRUE"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="22" height="10" alt="bar icon"></td><td align="right" class="symbol">TRUE</td><td align="right" class="name">TrueCar Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">2.90</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -23.7</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=SCI"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="13" height="10" alt="bar icon"></td><td align="right" class="symbol">SCI</td><td align="right" class="name">Service Corp.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">66.69</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="11" height="10" alt="bar icon"> -4.0</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=SP"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="9" height="10" alt="bar icon"></td><td align="right" class="symbol">SP</td><td align="right" class="name">SP Plus Corp.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">28.32</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="17" height="10" alt="bar icon"> -6.0</td></tr><tr class="row blue"><td align="center" class="chart"><a href="/h-sc/ui?s=PRDO"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/bluebar.png" width="8" height="10" alt="bar icon"></td><td align="right" class="symbol">PRDO</td><td align="right" class="name">Perdoceo Education Corporation</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">10.38</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="24" height="10" alt="bar icon"> -8.9</td></tr><tr class="row yellow"><td align="center" class="chart"><a href="/h-sc/ui?s=LAUR"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/yellowbar.png" width="20" height="10" alt="bar icon"></td><td align="right" class="symbol">LAUR</td><td align="right" class="name">Laureate Education, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">11.48</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="3" height="10" alt="bar icon"> -0.9</td></tr><tr class="row yellow"><td align="center" class="chart"><a href="/h-sc/ui?s=KAR"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/yellowbar.png" width="11" height="10" alt="bar icon"></td><td align="right" class="symbol">KAR</td><td align="right" class="name">KAR Auction Services Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">12.53</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -30.1</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=ETSY"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">ETSY</td><td align="right" class="name">Etsy Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">85.51</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -26.7</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=RCII"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">RCII</td><td align="right" class="name">Rent-A-Center, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">27.30</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="31" height="10" alt="bar icon"> 11.3</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=WTER"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">WTER</td><td align="right" class="name">Alkaline Water Co. Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">0.48</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -43.3</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=BLNK"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">BLNK</td><td align="right" class="name">Blink Charging Co.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">16.32</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -34.9</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=FTDR"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">FTDR</td><td align="right" class="name">frontdoor, inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">26.55</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="39" height="10" alt="bar icon"> -14.4</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=UHAL"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">UHAL</td><td align="right" class="name">Amerco</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">524.51</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="11" height="10" alt="bar icon"> -4.0</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=FRG"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">FRG</td><td align="right" class="name">Franchise Group Inc</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">37.25</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="26" height="10" alt="bar icon"> -9.6</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=MCW"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">MCW</td><td align="right" class="name">Mister Car Wash Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">13.32</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="31" height="10" alt="bar icon"> -11.5</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=WBX"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">WBX</td><td align="right" class="name">Wallbox N.V</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">11.61</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="8" height="10" alt="bar icon"> -2.8</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=HI"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">HI</td><td align="right" class="name">Hillenbrand Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">41.56</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="1" height="10" alt="bar icon"> -0.3</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=MATW"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">MATW</td><td align="right" class="name">Matthews International Corporation</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">29.62</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="14" height="10" alt="bar icon"> -4.9</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=CSV"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">CSV</td><td align="right" class="name">Carriage Services, Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">39.53</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -23.2</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=BFAM"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">BFAM</td><td align="right" class="name">Bright Horizons Family Solutions Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">80.30</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"> -39.5</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=YELP"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="40" height="10" alt="bar icon"></td><td align="right" class="symbol">YELP</td><td align="right" class="name">Yelp Inc.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">29.45</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="35" height="10" alt="bar icon"> -12.9</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=STON"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="15" height="10" alt="bar icon"></td><td align="right" class="symbol">STON</td><td align="right" class="name">StoneMor Inc</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">2.37</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="14" height="10" alt="bar icon"> -5.2</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=CHE"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="12" height="10" alt="bar icon"></td><td align="right" class="symbol">CHE</td><td align="right" class="name">Chemed Corp.</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">499.96</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="8" height="10" alt="bar icon"> -2.9</td></tr><tr class="row red"><td align="center" class="chart"><a href="/h-sc/ui?s=GHC"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"><input type="checkbox" checked="checked" aria-label="Deselect to remove symbol from chart"></td><td align="left" class="tail"><img src="/freecharts/rrg/redbar.png" width="10" height="10" alt="bar icon"></td><td align="right" class="symbol">GHC</td><td align="right" class="name">Graham Holdings Company</td><td align="right" class="sector">Consumer Discretionary</td><td align="right" class="industry">Special Consumer Services</td><td align="right" class="price">607.80</td><td align="left" class="chg"><img src="/freecharts/rrg/redbar.png" width="1" height="10" alt="bar icon"> -0.1</td></tr><tr class="row white"><td align="center" class="chart"><a href="/h-sc/ui?s=$USD"><img src="/freecharts/rrg/candle.gif" alt="Candlesticks Icon"></a></td><td align="center" class="visible"></td><td align="left" class="tail"></td><td align="right" class="symbol">$USD</td><td align="right" class="name">US Dollar - Cash Settle (EOD)</td><td align="right" class="sector"></td><td align="right" class="industry"></td><td align="right" class="price">103.69</td><td align="left" class="chg"><img src="/freecharts/rrg/greenbar.png" width="11" height="10" alt="bar icon"> 3.9</td></tr></tbody></table></div>
+          </div>
+
+            <!-- RRG UPGRADE TIP -->
+            <div class="alert alert-info scc-upgrade-tip" style="display:none;">
+                <div class="tip-header">
+                    <h4><i class="fas fa-fw fa-lightbulb-on"></i>&nbsp;UPGRADE&nbsp;TIP: Create Custom RRG Charts With Your Own Symbols</h4>
+                </div>
+                <div class="tip-body">
+                    As a StockCharts Member, you can customize your RRG charts with the symbols of your choosing.
+                    See RRGs for the stocks and funds you own in your portfolio, or analyze your own unique collection of favorite market indexes.
+                    <br>
+                    <br>
+                    <b>Start your <a href="/checkout/freetrial/">risk-free 1-month&nbsp;trial</a> now to get the most out of RRG and our many other tools and features.</b>
+                </div>
+            </div><!-- end of UPGRADE TIP -->
+
+          <div class="container">
+            <div class="alert alert-secondary notices" style="margin-top:20px;">
+                <p>
+                    RRG<sup>®</sup> charts show you the relative strength and momentum for a group of stocks.  Stocks with strong relative strength and momentum appear in the green Leading quadrant.
+                    As relative momentum fades, they typically move into the yellow Weakening quadrant.  If relative strength then fades, they move into the red Lagging quadrant.
+                    Finally, when momentum starts to pick up again, they shift into the blue Improving quadrant.<br>
+                </p>
+            </div>
+
+            <div class="alert alert-secondary notices">
+                <h4 class="associated-charts-title">Notes</h4>
+                <ul style="margin-left:65px; list-style:none;">
+                    <li><a href="/sales">StockCharts Members</a> have access to many more RRG chart combinations and customization options.<br>
+                    </li><li>The terms "Relative Rotation Graph" and "RRG" are registered trademarks of <a href="https://www.relativerotationgraphs.com/">RRG Research</a>. 
+                </li></ul>
+            </div>
+        </div>
+
+            <!-- FREE CHARTS LINKS ROW -->
+            <div class="section-links-row">
+                <div class="section-links-row-bound">
+                    <ul class="section-links-row-ul">
+                        <li><a data-toggle="modal" href="#quickTipsModal"><i class="far fa-lightbulb"></i><span>Quick Tips</span></a></li>
+                        <li><a href="/docs/doku.php?id=other-tools:rrg-charts"><i class="fa fa-info-circle"></i><span>Instructions</span></a></li>
+                        <li style="position:relative; display:inline-block;">
+                            <a href="#" id="linkChart" onclick="return false;"><i class="fa fa-link"></i>Permalink</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- #chart-body -->
+
+    </div><!-- #pagebody .row -->
+        
+</div><!-- #pagebody -->
+
+    <!-- SCC FOOTER -->
+    <footer id="scc-footer" class="footer-blue">
+      <!-- UPPER -->
+      <div id="footer-upper">
+        <div class="container">
+          <!-- NEWSLETTER -->
+          <div id="newsletter">
+            <div class="bg-cw"></div>
+            <div class="col-lg-6 col-md-7 col-xs-12">
+              <h4>Expert market commentary delivered right to your inbox, <span>for free.</span></h4>
+              <p>Sign up for our weekly ChartWatchers Newsletter</p>
+            </div>
+            <div class="input-col col-lg-6 col-md-5 col-xs-12">
+              <!-- MC SIGNUP -->
+              <div id="mc_embed_signup" class="form-group">
+                <form action="https://stockcharts.us17.list-manage.com/subscribe/post?u=3353671ea8af8c5eab80183ab&amp;id=7b214beb69" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" rel="noopener noreferrer" novalidate="">
+                  <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group" style="display:inline-block; vertical-align:middle; width:calc(100% - 110px); margin:0 5px 0 0;">
+                      <input type="email" value="" name="EMAIL" placeholder="Enter Your Email" class="required email form-control input-lg" id="mce-EMAIL" aria-label="Enter Your Email">
+                    </div>
+                    <div class="clear btn-row" style="display:inline-block; vertical-align:middle;">
+                      <input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-green btn-rounded btn-md btn-margin-0">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3353671ea8af8c5eab80183ab_7b214beb69" tabindex="-1" value="" aria-label="Sign Up"></div>
+                  </div>
+                </form>
+              </div><!-- end of MC SIGNUP -->
+              <div class="more-link">
+                <a href="/newsletter/">Learn&nbsp;More&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end of UPPER -->
+      <!-- LOWER -->
+      <div id="footer-lower">
+        <div class="container">
+          <!-- SITELINKS -->
+          <div id="sitelinks" class="clearfix">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h4>On&nbsp;StockCharts</h4>
+              <ul class="list-unstyled">
+                <li><a href="/freecharts/">Charts &amp; Tools</a></li>
+                <li><a href="/articles/">Articles</a></li>
+                <li><a href="/tv/">StockCharts TV</a></li>
+                <li><a href="//school.stockcharts.com">ChartSchool</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h4>Members</h4>
+              <ul class="list-unstyled">
+                <li><a href="/def/servlet/Favorites.CServlet">Your Dashboard</a></li>
+                <li><a href="/def/servlet/Favorites.CServlet#chartlists">Your ChartLists</a></li>
+                <li><a href="/def/servlet/ScanUI">Advanced Scans</a></li>
+                <li><a href="/h-mem/useralertsummary.html">Technical Alerts</a></li>
+              </ul>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h4>Help</h4>
+              <ul class="list-unstyled">
+                <li><a href="//support.stockcharts.com">Support Center</a></li>
+                <li><a href="//support.stockcharts.com/doku.php?id=faqs">FAQs</a></li>
+                <li><a href="/support/techsupport.html">Contact Us</a></li>
+                <li><a href="/freecharts/catalog/">Symbol Catalog</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h4>Company</h4>
+              <ul class="list-unstyled">
+                <li><a href="/about/">About Us</a></li>
+                <li><a href="/press/">Press</a></li>
+                <li><a href="/careers/">Careers</a></li>
+                <li><a href="//store.stockcharts.com/">StockCharts Store</a></li>
+              </ul>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+          </div>
+          <!-- LOGO -->
+          <div id="logo-col" class="col-xs-12">
+            <a href="/">
+              <img src="//d.stockcharts.com/img/scc-logo-light.png" alt="StockCharts.com Logo" class="footer-logo">
+            </a>
+            <!-- SOCIAL LINKS -->
+            <ul id="social-links" class="list-inline list-unstyled">
+              <li><a href="https://www.facebook.com/stockchartsdotcom" target="_blank" aria-label="StockCharts Facebook Page" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="https://twitter.com/stockcharts" target="_blank" aria-label="StockCharts Twitter Page" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="https://www.youtube.com/user/stockchartscom" target="_blank" aria-label="StockCharts YouTube Page" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+              <li><a href="https://www.linkedin.com/company/stockcharts.com-inc." target="_blank" aria-label="StockCharts LinkedIn Page" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+          <!-- COPYRIGHT -->
+          <div id="copyright-col" class="col-xs-12">
+            <p class="copyright">©&nbsp;StockCharts.com,&nbsp;Inc. All&nbsp;Rights&nbsp;Reserved.</p>
+            <ul class="list-inline list-unstyled">
+              <li><a href="//support.stockcharts.com/doku.php?id=policies:terms_of_service" target="_blank" rel="noopener noreferrer">Terms&nbsp;of&nbsp;Service</a></li>
+              <li><a href="//support.stockcharts.com/doku.php?id=policies:privacy_statement" target="_blank" rel="noopener noreferrer">Privacy&nbsp;Statement</a></li>
+              <li><a href="/sitemap.html" target="_blank">Site&nbsp;Map</a></li>
+            </ul>
+          </div>
+          <!-- LEGAL -->
+          <div id="legal-col" class="col-lg-10 col-lg-offset-1 col-xs-12">
+            <p class="legal">Market data provided by <b>Xignite, Inc</b>. Commodity and historical index data provided by
+              <b>Pinnacle Data Corporation</b>. Cryptocurrency data provided by <b>CryptoCompare</b>. Unless otherwise indicated,
+              all data is delayed by 15 minutes. The information provided by StockCharts.com, Inc. is not investment advice.
+              Trading and investing in financial markets involves risk. You are responsible for your own
+              investment&nbsp;decisions.</p>
+          </div>
+        </div>
+      </div><!-- end of LOWER -->
+    </footer><!-- end of SCC FOOTER -->
+
+    <!-- JAVASCRIPT WARNING -->
+    <noscript>
+      <div class="alert alert-danger" role="alert">
+        <h2>Attention: your browser does not have JavaScript enabled!</h2>
+        <p><b>In order to use StockCharts.com successfully, you must enable JavaScript in your browser.</b><br /><a
+          href="https://www.enable-javascript.com" target="_blank" aria-label="Instructions to Enable JavaScript"
+          rel="noopener noreferrer">Click Here</a> to learn how to enable JavaScript.</p>
+      </div>
+    </noscript>
+
+    <!-- QUICK TIPS MODAL -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="quickTipsModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- MODAL HEADER -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close Modal"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
+                    <h4 class="modal-title"><i class="far fa-lightbulb"></i>Quick Tips</h4>
+                </div><!-- end of MODAL HEADER -->
+                <!-- MODAL BODY -->
+                <div class="modal-body">
+                    <p class="info">
+                        Click and drag your mouse on the S&amp;P 500 chart to change the end date for the RRG plot. Click and drag inside the RRG plot to change the origin's position. Click on "Ctr" to fix the origin in the center of the plot.
+                    </p>
+                    <!-- BUTTON ROW -->
+                    <div class="btn-row">
+                        <button type="button" class="btn btn-default btn-white" data-dismiss="modal">Got it!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end of QUICK TIPS MODAL -->
+    
+    <!-- PERMALINK MODAL -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="linkableVersionForm">
+        <div class="modal-dialog" role="document" id="permalink-form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close Modal"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
+                    <h4 class="modal-title"><i class="fa fa-link"></i>Permalink</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Permalinks can be bookmarked, saved, or shared with others</p>
+
+                    <input type="text" id="linkableDisplayUrl" class="form-control" value="//stockcharts.com/freecharts/rrg/?s=RENN,PCOM,LAUR,LRN,SCI,WBX,FRG,CSV,HRB,CHE,MCW,LOPE,GHC,STON,HI,PRDO,SP,ATGE,TMX,STRA,UHAL,EBAY,MATW,YELP,KAR,MODV,MNRO,TRUE,APEI,BFAM,MELI,RDBX,BLNK,FEDU,ETSY,ROVR,CRWG,FTDR,RCII,WTER&amp;b=$USD&amp;p=w&amp;y=1&amp;t=5&amp;f=tail,d" readonly="readonly" aria-label="Permalink">
+
+                    <div id="permalinkCopySuccess" class="alert alert-success">Link Copied to Clipboard!</div>
+
+                    <div class="btn-row">
+                        <button id="permalink-copy" type="button" class="btn btn-default btn-green"><i class="fa fa-copy"></i>&nbsp;Copy&nbsp;Link</button>
+                        <button id="linkableReload" type="button" class="btn btn-default btn-grey"><i class="fas fa-sync"></i>&nbsp;Reload&nbsp;with&nbsp;Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end of PERMALINK MODAL -->
+
+
+<script> minimumWindowWidthForSidebarAd = 1110; </script>
+<script type="text/javascript" src="//d.stockcharts.com/js/autosuggest-v2.js"></script>
+<script type="text/javascript" src="//d.stockcharts.com/js/lib/jqueryplugins/jquery.slider.js"></script>
+<script type="text/javascript" src="//d.stockcharts.com/freecharts/rrg/rrg-v2.js"></script>
+<script>
+
+    window.addEventListener("keydown", function(e) {
+        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName === 'SELECT') {
+            return true;
+        }
+        if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+            e.preventDefault();
+        }
+    }, false);
+
+    $(function(){
+        $('#quick-tips-unhide').click(function() { $('#quick-tips').show(400); });
+
+        window.authtoken = '82698487447373678244130';
+        $("#scc-font-toggle").remove();
+        rrg.init();
+    });
+    
+    $('#linkChart').on('click', function(){
+        $('#linkableVersionForm').modal('show');
+        $('#permalinkCopySuccess').hide();
+        $('#linkableDisplayUrl').select();
+    });
+    $('#linkableReload').on('click', function(){
+        var url = $('#linkableDisplayUrl').val();
+        window.location.href = url;
+    });
+    $('#permalink-copy').on('click', function(){
+        $('#linkableDisplayUrl').select();
+
+        try {
+          var userAgent = window.navigator.userAgent;
+          var successful = false;
+
+          if (userAgent.match(/safari/i) && (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i))) {
+            var el = $('#linkableDisplayUrl')[0];
+            var oldContentEditable = el.contentEditable,
+                oldReadOnly = el.readOnly,
+                range = document.createRange();
+
+            el.contenteditable = true;
+            el.readonly = false;
+            range.selectNodeContents(el);
+
+            var s = window.getSelection();
+            s.removeAllRanges();
+            s.addRange(range);
+
+            el.setSelectionRange(0, 999999);
+
+            el.contentEditable = oldContentEditable;
+            el.readOnly = oldReadOnly;
+
+            successful = document.execCommand('copy');            
+          }
+          else {
+            successful = document.execCommand('copy');
+          }
+
+          if (successful) {
+            $('#permalinkCopySuccess').show();
+          }
+        } catch (err) {
+          console.warn('Oops, unable to copy permalink.');
+        }
+    });
+
+</script>
+    
+
+
+</body></html>
